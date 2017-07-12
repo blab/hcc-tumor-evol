@@ -1,9 +1,10 @@
 *.trees filter=lfs diff=lfs merge=lfs -text
 samogitia2_7.txt filter=lfs diff=lfs merge=lfs -text
 samogitia.out.txt filter=lfs diff=lfs merge=lfs -text
-samogitia25.out.txt filter=lfs diff=lfs merge=lfs -text
-samogitia50.out.txt filter=lfs diff=lfs merge=lfs -text
-samogitia75.out.txt filter=lfs diff=lfs merge=lfs -text
+samogitiat25.txt filter=lfs diff=lfs merge=lfs -text
+samogitiat50.txt filter=lfs diff=lfs merge=lfs -text
+samogitiat75.txt filter=lfs diff=lfs merge=lfs -text
+samogitiat100.txt filter=lfs diff=lfs merge=lfs -text
 samogitiat25.out.txt filter=lfs diff=lfs merge=lfs -text
 samogitiat50.out.txt filter=lfs diff=lfs merge=lfs -text
 samogitiat75.out.txt filter=lfs diff=lfs merge=lfs -text
