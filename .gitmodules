@@ -1,0 +1,3 @@
+[submodule "baltic"]
+	path = baltic
+	url = https://github.com/blab/baltic.git
