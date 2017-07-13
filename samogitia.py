@@ -5,6 +5,7 @@ import baltic as bt
 import sys
 import collections
 import numpy as np
+import pandas as pd
 
 def overlap(a,b):
     """
@@ -31,9 +32,11 @@ austechia.add_argument('-o','--output', type=argparse.FileType('w'), default='sa
 austechia.add_argument('-s','--states', type=str, default='0-inf', help="Define range of states for analysis.\n")
 austechia.add_argument('-df','--date_format', type=str, default='%Y-%m-%d', help="Define date format encoded in tips (default \'%%Y-%%m-%%d\').\n")
 austechia.add_argument('-tf','--tip_format', type=str, default='\|([0-9]+)\-*([0-9]+)*\-*([0-9]+)*$', help="Define regex for capturing dates encoded in tips (default \'\|([0-9]+)\-*([0-9]+)*\-*([0-9]+)*$\'.\n")
-austechia.add_argument('-ti', '--time_slice', type = float, default=1.0, help = 'Define time to slice trees, 0 -1')
+austechia.add_argument('-ti', '--time_slice', type = float, default=1.0, help = 'Define time to slice trees')
+austechia.add_argument('-gl', '--grid_length', type = float, default=1.0, help = 'Define length of grid to use for location interpolation in lsmooth')
+
 args = vars(austechia.parse_args())
-burnin, treefile, analyses, outfile, calibration, states, dformat, tformat, time = args['burnin'], args['treefile'], args['analyses'], args['output'], args['nocalibration'], args['states'], args['date_format'], args['tip_format'], args['time_slice']
+burnin, treefile, analyses, outfile, calibration, states, dformat, tformat, time, glength = args['burnin'], args['treefile'], args['analyses'], args['output'], args['nocalibration'], args['states'], args['date_format'], args['tip_format'], args['time_slice'], args['grid_length']
 
 lower,upper=states.split('-')
 lower=int(lower)
@@ -64,7 +67,7 @@ threshold=progress_update ## threshold at which to update progress bar
 processingRate=[] ## remember how quickly script processes trees
 #############################
 
-available_analyses=['treeLength','RC','Sharp','tmrcas','transitions','subtrees','tslice'] ## analysis names that are possible
+available_analyses=['treeLength','RC','Sharp','tmrcas','transitions','subtrees','tslice','lsmooth'] ## analysis names that are possible
 
 assert analyses,'No analyses were selected.'
 for queued_analysis in analyses: ## for each queued analysis check if austechia can do anything about them (i.e. whether they're known analysis types)
@@ -130,6 +133,17 @@ for line in treefile: ## iterate through each line
                 if 'tslice' in analyses:
                     outfile.write('\ttsliceX\ttsliceY\ttsliceZ\tsliceg')
                     a = 0
+                #############################################################
+                if 'lsmooth' in analyses:
+                    inc = 0.5 * glength/tipNum
+                    grid = np.arange(0,glength,inc)}
+                    for x in grid:
+                        for leaf in range(len(ll.leaves)):
+                            labels = [str(x),str(leaf)] * 3
+                            outfile.write('\tx%s_%s\ty%s_%s'%(labels))
+
+############################################################
+
                 ## your custom header making code goes here
                 ## if 'custom' in analyses:
                 ##     trait='yourTrait'
@@ -322,6 +336,26 @@ for line in treefile: ## iterate through each line
                                 outfile.write('\t%s'%(treeL)) ## output to file
                         outfile.write('\t%s\t%s\t%s\t%s'%(str(lx),str(ly),str(z),str(g)))
                         a += 1
+            if 'lsmooth' in analyses:
+                for k in ll.Objects:
+                    if isinstance(k,bt.leaf) or k.branchType=='leaf':
+                        xvals = []
+                        yvals = []
+                        zvals = []
+                        cur_node = k
+                        while cur_node:
+                            xvals.append(cur_node.traits['location1'])
+                            yvals.append(cur_node.traits['location2'])
+                            zvals.append(cur_node.x)
+                            cur_node = cur_node.parent
+                        xinterp = np.interp(grid,zvals,xvals)
+                        yinterp = np.interp(grid,zvals,yvals)
+                        for g in range(len(grid)):
+                            x = str(xinterp[g])
+                            y = str(yinterp[g])
+                            outfile.write('\t%s\t%s'%(x,y))
+
+
                         #sys.stderr.write('\t{%s,%s,%s,%s}') %(str(lx),str(ly),str(k.x),str(g))
             ## your analysis and output code goes here, e.g.
             ## if 'custom' in analyses:
@@ -360,5 +394,6 @@ for line in treefile: ## iterate through each line
         ################################################################################
         if 'End;' in line:
             pass
+
 outfile.close()
 sys.stderr.write('\nDone!\n') ## done!
