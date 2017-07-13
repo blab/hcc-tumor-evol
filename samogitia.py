@@ -5,7 +5,7 @@ import baltic as bt
 import sys
 import collections
 import numpy as np
- 
+
 def overlap(a,b):
     """
     Return the elements shared by two lists in the following format:
@@ -13,16 +13,16 @@ def overlap(a,b):
     """
     a_multiset = collections.Counter(a)
     b_multiset = collections.Counter(b)
- 
+
     overlap = list((a_multiset & b_multiset).elements())
     a_remainder = list((a_multiset - b_multiset).elements())
     b_remainder = list((b_multiset - a_multiset).elements())
- 
+
     return overlap, a_remainder, b_remainder
- 
+
 ############ arguments
 austechia = argparse.ArgumentParser(description="samogitia.py analyses trees drawn from the posterior distribution by BEAST.\n")
- 
+
 austechia.add_argument('-b','--burnin', default=0, type=int, help="Number of states to remove as burnin (default 0).\n")
 austechia.add_argument('-nc','--nocalibration', default=True, action='store_false', help="Use flag to prevent calibration of trees into absolute time (default True). Should be used if tip names do not contain information about *when* each sequence was collected.\n")
 austechia.add_argument('-t','--treefile', type=open, required=True, help="File with trees sampled from the posterior distribution (usually with suffix .trees).\n")
@@ -34,28 +34,28 @@ austechia.add_argument('-tf','--tip_format', type=str, default='\|([0-9]+)\-*([0
 austechia.add_argument('-ti', '--time_slice', type = float, default=1.0, help = 'Define time to slice trees, 0 -1')
 args = vars(austechia.parse_args())
 burnin, treefile, analyses, outfile, calibration, states, dformat, tformat, time = args['burnin'], args['treefile'], args['analyses'], args['output'], args['nocalibration'], args['states'], args['date_format'], args['tip_format'], args['time_slice']
- 
+
 lower,upper=states.split('-')
 lower=int(lower)
 if upper=='inf':
     upper=np.inf
 else:
     upper=int(upper)
- 
+
 try:
     for line in open('banner_samogitia.txt','r'):
         sys.stderr.write('%s'%(line))
 except:
     pass
- 
+
 ## keeps track of things in the tree file at the beginning
 plate=True
 taxonlist=False
 treecount=0 ## counts tree
 ##
- 
+
 tips={} ## remembers tip encodings
- 
+
 ############################# progress bar stuff
 Ntrees=10000 ## assume 10 000 trees in posterior sample
 barLength=30
@@ -63,35 +63,35 @@ progress_update=Ntrees/barLength ## update progress bar every time a tick has to
 threshold=progress_update ## threshold at which to update progress bar
 processingRate=[] ## remember how quickly script processes trees
 #############################
- 
+
 available_analyses=['treeLength','RC','Sharp','tmrcas','transitions','subtrees','tslice'] ## analysis names that are possible
- 
+
 assert analyses,'No analyses were selected.'
 for queued_analysis in analyses: ## for each queued analysis check if austechia can do anything about them (i.e. whether they're known analysis types)
     assert queued_analysis in available_analyses,'%s is not a known analysis type\n\nAvailable analysis types are: \n* %s\n'%(queued_analysis,'\n* '.join(available_analyses))
- 
+
 begin=dt.datetime.now() ## start timer
- 
+
 for line in treefile: ## iterate through each line
     ###################################################################################
     if plate==True and 'state' not in line.lower():
         cerberus=re.search('Dimensions ntax\=([0-9]+)\;',line) ## Extract useful information from the bits preceding the actual trees.
         if cerberus is not None:
             tipNum=int(cerberus.group(1))
- 
+
         if 'Translate' in line:
             taxonlist=True ## taxon list to follow
- 
+
         if taxonlist==True and ';' not in line and 'Translate' not in line: ## remember tip encodings
             cerberus=re.search('([0-9]+) ([\'\"A-Za-z0-9\?\|\-\_\.\/]+)',line)
             tips[cerberus.group(1)]=cerberus.group(2).strip("'")
- 
+
     if 'tree STATE_' in line and plate==True: ## starting actual analysis
         plate=False
         assert (tipNum == len(tips)),'Expected number of tips: %s\nNumber of tips found: %s'%(tipNum,len(tips)) ## check that correct numbers of tips have been parsed
     ################################################################################### start analysing trees
     cerberus=re.match('tree\sSTATE\_([0-9]+).+\[\&R\]\s',line) ## search for crud at the beginning of the line that's not a tree string
- 
+
     if cerberus is not None: ## tree identified
         ################################################################# at state 0 - create the header for the output file and read the tree (in case the output log file requires information encoded in the tree)
         if treecount==0: ## At tree state 0 insert header into output file
@@ -118,7 +118,7 @@ for line in treefile: ## iterate through each line
                             elif k.name in Conakry_tips:
                                 tmrcas['B'].append(k.numName)
                             tmrcas['C'].append(k.numName)
- 
+
                     outfile.write('\t%s'%('\t'.join(sorted(tmrcas.keys()))))
                 ###########################################
                 if 'transitions' in analyses:
@@ -158,7 +158,7 @@ for line in treefile: ## iterate through each line
                 for k in ll.Objects:
                     if isinstance(k,leaf):
                         k.name=k.numName ## otherwise every tip gets a name that's the same as tree string names
-              
+
             #### calibration
             dateCerberus=re.compile(tformat) ## search pattern + brackets on actual calendar date
             if calibration==True: ## Calibrate tree so everything has a known position in actual time
@@ -203,7 +203,7 @@ for line in treefile: ## iterate through each line
                         if len(targetLeft)==0 and len(queryLeft)<=score[required]: ## all of query tips must be descended from common ancestor, every extra descendant of common ancestor not in query contributes to a score
                             nodes[required]=k ## if score improved - assign new common ancestor
                             score[required]=len(queryLeft) ## score is extra descendants not in the list of known tips
- 
+
                 outTMRCA=['%.6f'%(nodes[n].absoluteTime) for n in sorted(nodes.keys())] ## fetch absoluteTime of each identified common ancestor
                 outfile.write('\t%s'%('\t'.join(outTMRCA)))
             ###################################################
@@ -221,7 +221,7 @@ for line in treefile: ## iterate through each line
                             t=min(map(bt.decimalDate,[dateCerberus.search(x).group(1) for x in all_leaves]))-k.absoluteTime+halfBranch
                         else:
                             t=halfBranch
- 
+
                         outSharp.append('(%d,%d,%.4f)'%(N,S,t))
                 outfile.write('\t%s'%('\t'.join(outSharp)))
             ###################################################
@@ -252,23 +252,23 @@ for line in treefile: ## iterate through each line
                             if [ch.traits[traitName] for ch in k.children].count(kloc)>0:
                                 proceed=True
                         #print k.index,k.parent.index,k.traits,k.parent.traits,k.traits[traitName]
- 
+
                         if proceed==True: ## if at least one valid tip and no hanging nodes
                             subtree=copy.deepcopy(ll.traverseWithinTrait(k,traitName))
                             subtree_leaves=[x.name for x in subtree if isinstance(x,bt.leaf)]
- 
+
                             if len(subtree_leaves)>0:
                                 mostRecentTip=max([bt.decimalDate(x.strip("'").split('|')[-1]) for x in subtree_leaves])
                                 while sum([len(nd.children)-sum([1 if ch in subtree else 0 for ch in nd.children]) for nd in subtree if isinstance(nd,bt.node) and nd.index!='Root'])>0: ## keep removing nodes as long as there are nodes with children that are not entirely within subtree
                                     for nd in sorted([q for q in subtree if isinstance(q,bt.node)],key=lambda x:(sum([1 if ch in subtree else 0 for ch in x.children]),x.height)): ## iterate over nodes in subtree, starting with ones that have fewest valid children and are more recent
- 
+
                                         child_status=[1 if ch in subtree else 0 for ch in nd.children] ## check how many children of current node are under the right trait value
- 
+
                                         if sum(child_status)<2 and nd.index!='Root': ## if less than 2 children in subtree (i.e. not all children are under the same trait state)
                                             #print 'removing: %d, children in: %s'%(nd.index,[location_to_country[ch.traits[traitName]] for ch in nd.children])
                                             grand_parent=nd.parent ## fetch grandparent of node to be removed
                                             grand_parent.children.remove(nd) ## remove node from its parent's children
- 
+
                                             if sum(child_status)==0: ## node has no valid children - current grandparent will be removed on next iteration, since it will only have one child
                                                 pass
                                             else: ## at least one child is still valid - reconnect the one valid child to grandparent
@@ -303,7 +303,7 @@ for line in treefile: ## iterate through each line
                         z = k.x
                         if z == None:
                             z = 0.0
-                         
+
                         if (isinstance(k,bt.node) or k.branchType=='node') and k.x != time:
                             for c in k.children:
                                 if c.x > time:
@@ -313,7 +313,7 @@ for line in treefile: ## iterate through each line
                                     deltaX = (time - k.x)/(c.x - k.x) * (lcx - lx)
                                     lx = lx + deltaX
                                     ly = ly + deltaX * m
-                                    
+
                         #outfile.write('\t{%s,%s,%s,%s}'%(str(lx),str(ly),str(z),str(g)))
                         if a > 0:
                             outfile.write('\n')
@@ -341,7 +341,7 @@ for line in treefile: ## iterate through each line
             timeRate=float(divmod(timeTakenSoFar.total_seconds(),60)[0]*60+divmod(timeTakenSoFar.total_seconds(),60)[1])/float(treecount+1) ## rate at which trees have been processed
             processingRate.append(timeRate) ## remember rate
             ETA=(sum(processingRate)/float(len(processingRate))*(Ntrees-treecount))/float(60)/float(60) ## estimate how long it'll take, given mean processing rate
- 
+
             excessiveTrees=treecount
             if treecount>=10000:
                 excessiveTrees=10000
@@ -351,11 +351,11 @@ for line in treefile: ## iterate through each line
             else:
                 reportElapsed=timeElapsed ## keep minutes
                 reportUnit='m'
- 
+
             sys.stderr.write('\r') ## output progress bar
             sys.stderr.write("[%-30s] %4d%%  trees: %5d  elapsed: %5.2f%1s  ETA: %5.2fh (%6.1e s/tree)" % ('='*(excessiveTrees/progress_update),treecount/float(Ntrees)*100.0,treecount,reportElapsed,reportUnit,ETA,processingRate[-1]))
             sys.stderr.flush()
- 
+
             threshold+=progress_update ## increment to next threshold
         ################################################################################
         if 'End;' in line:
