@@ -136,11 +136,10 @@ for line in treefile: ## iterate through each line
                 #############################################################
                 if 'lsmooth' in analyses:
                     inc = 0.5 * glength/tipNum
-                    grid = np.arange(0,glength,inc)}
-                    for x in grid:
-                        for leaf in range(len(ll.leaves)):
-                            labels = [str(x),str(leaf)] * 3
-                            outfile.write('\tx%s_%s\ty%s_%s'%(labels))
+                    grid = np.arange(0,glength,inc)
+                    for leaf in range(len(ll.leaves)):
+                        for g in grid:
+                            outfile.write('\tx%s_%s\ty%s_%s'%(str(g),str(leaf),str(g),str(leaf)))
 
 ############################################################
 
@@ -343,11 +342,16 @@ for line in treefile: ## iterate through each line
                         yvals = []
                         zvals = []
                         cur_node = k
-                        while cur_node:
+
+                        while cur_node.traits.has_key('location1'):
                             xvals.append(cur_node.traits['location1'])
                             yvals.append(cur_node.traits['location2'])
-                            zvals.append(cur_node.x)
+                            z = cur_node.x
+                            if z == None:
+                                z = 0.0
+                            zvals.append(z)
                             cur_node = cur_node.parent
+
                         xinterp = np.interp(grid,zvals,xvals)
                         yinterp = np.interp(grid,zvals,yvals)
                         for g in range(len(grid)):
