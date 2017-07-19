@@ -1,3 +1,5 @@
 *.pyc
 *.checkpoint.ipynb
 *ipynb_checkpoints/
+*.out.txt
+*.trees
