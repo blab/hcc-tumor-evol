@@ -11,3 +11,6 @@ samogitiat75.out.txt filter=lfs diff=lfs merge=lfs -text
 samogitiat100.out.txt filter=lfs diff=lfs merge=lfs -text
 samogitiat1_0.txt filter=lfs diff=lfs merge=lfs -text
 samogitiat0_5.txt filter=lfs diff=lfs merge=lfs -text
+*out.txt filter=lfs diff=lfs merge=lfs -text
+*.out.txt filter=lfs diff=lfs merge=lfs -text
+output/*.out.txt filter=lfs diff=lfs merge=lfs -text

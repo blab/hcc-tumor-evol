@@ -5,6 +5,8 @@ import baltic as bt
 import sys
 import collections
 import numpy as np
+import pandas as pd
+import operator
 
 def overlap(a,b):
     """
@@ -31,9 +33,12 @@ austechia.add_argument('-o','--output', type=argparse.FileType('w'), default='sa
 austechia.add_argument('-s','--states', type=str, default='0-inf', help="Define range of states for analysis.\n")
 austechia.add_argument('-df','--date_format', type=str, default='%Y-%m-%d', help="Define date format encoded in tips (default \'%%Y-%%m-%%d\').\n")
 austechia.add_argument('-tf','--tip_format', type=str, default='\|([0-9]+)\-*([0-9]+)*\-*([0-9]+)*$', help="Define regex for capturing dates encoded in tips (default \'\|([0-9]+)\-*([0-9]+)*\-*([0-9]+)*$\'.\n")
-austechia.add_argument('-ti', '--time_slice', type = float, default=1.0, help = 'Define time to slice trees, 0 -1')
+austechia.add_argument('-ti', '--time_slice', type = float, default=1.0, help = 'Define time to slice trees')
+austechia.add_argument('-gl', '--grid_length', type = float, default=1.0, help = 'Define length of grid to use for location interpolation in lsmooth')
+austechia.add_argument('-j', '--jump', type = int, default=1, help = 'Define parition of trees to use')
+
 args = vars(austechia.parse_args())
-burnin, treefile, analyses, outfile, calibration, states, dformat, tformat, time = args['burnin'], args['treefile'], args['analyses'], args['output'], args['nocalibration'], args['states'], args['date_format'], args['tip_format'], args['time_slice']
+burnin, treefile, analyses, outfile, calibration, states, dformat, tformat, time, glength, jump = args['burnin'], args['treefile'], args['analyses'], args['output'], args['nocalibration'], args['states'], args['date_format'], args['tip_format'], args['time_slice'], args['grid_length'],args['jump']
 
 lower,upper=states.split('-')
 lower=int(lower)
@@ -64,7 +69,7 @@ threshold=progress_update ## threshold at which to update progress bar
 processingRate=[] ## remember how quickly script processes trees
 #############################
 
-available_analyses=['treeLength','RC','Sharp','tmrcas','transitions','subtrees','tslice'] ## analysis names that are possible
+available_analyses=['treeLength','RC','Sharp','tmrcas','transitions','subtrees','tslice','lsmooth'] ## analysis names that are possible
 
 assert analyses,'No analyses were selected.'
 for queued_analysis in analyses: ## for each queued analysis check if austechia can do anything about them (i.e. whether they're known analysis types)
@@ -130,6 +135,15 @@ for line in treefile: ## iterate through each line
                 if 'tslice' in analyses:
                     outfile.write('\ttsliceX\ttsliceY\ttsliceZ\tsliceg')
                     a = 0
+                #############################################################
+                if 'lsmooth' in analyses:
+                    grid = np.linspace(0,glength,tipNum)
+                    for leaf in range(len(ll.leaves)):
+                        for g in grid:
+                            outfile.write('\tx%s_%s\ty%s_%s\tg%s_%s'%(str(g),str(leaf),str(g),str(leaf),str(g),str(leaf)))
+
+############################################################
+
                 ## your custom header making code goes here
                 ## if 'custom' in analyses:
                 ##     trait='yourTrait'
@@ -144,7 +158,7 @@ for line in treefile: ## iterate through each line
                 treecount+1
                 outfile.write('\n') ## newline for first tree
         #################################################################
-        if int(cerberus.group(1)) >= burnin and lower <= int(cerberus.group(1)) < upper: ## After burnin start processing
+        if int(cerberus.group(1)) >= burnin and lower <= int(cerberus.group(1)) < upper and treecount%jump == 0: ## After burnin start processing
             ll=bt.tree() ## ll is the tree object
             start=len(cerberus.group()) ## find start of tree string in line
             treestring=str(line[start:]) ## get tree string
@@ -298,21 +312,23 @@ for line in treefile: ## iterate through each line
                 for k in ll.Objects: ## loop through all nodes and leaves of tree
                     g = k.traits['clone'] # store clone value
                     if k.x <= time and k.traits['clone'] != 'omega': #and k.traits.has_key('location'): #and  len(k.traits['location']) > 1:
-                        lx = k.traits['location1']
+                        lx = k.traits['location1'] #store locations (x, location1, y, location2 )of each object (node or leaf )
                         ly = k.traits['location2']
-                        z = k.x
+                        z = k.x #z value is evolutionary distance or absolute time
                         if z == None:
                             z = 0.0
 
-                        if (isinstance(k,bt.node) or k.branchType=='node') and k.x != time:
-                            for c in k.children:
-                                if c.x > time:
+                        if (isinstance(k,bt.node) or k.branchType=='node') and k.x != time: #if node less than time slice point
+                            for c in k.children: #check all children
+                                if c.x > time: #if child is on other side of timepoint(spans slice)
                                     lcx = c.traits['location1']
                                     lcy = c.traits['location2']
-                                    m = (lcy - ly)/(lcx - lx)
-                                    deltaX = (time - k.x)/(c.x - k.x) * (lcx - lx)
-                                    lx = lx + deltaX
-                                    ly = ly + deltaX * m
+                                    lx = np.interp(time,[k.x,c.x],[lx,lcx])
+                                    ly = np.interp(time,[k.x,c.x],[ly,lcy])
+                                    #m = (lcy - ly)/(lcx - lx)
+                                    #deltaX = (time - k.x)/(c.x - k.x) * (lcx - lx)
+                                    #lx = lx + deltaX
+                                    #ly = ly + deltaX * m
 
                         #outfile.write('\t{%s,%s,%s,%s}'%(str(lx),str(ly),str(z),str(g)))
                         if a > 0:
@@ -322,6 +338,39 @@ for line in treefile: ## iterate through each line
                                 outfile.write('\t%s'%(treeL)) ## output to file
                         outfile.write('\t%s\t%s\t%s\t%s'%(str(lx),str(ly),str(z),str(g)))
                         a += 1
+            if 'lsmooth' in analyses:
+                #for k in ll.Objects:
+                sorted_l = sorted(ll.leaves, key=operator.attrgetter('name'))
+                for l in sorted_l:
+                    #if isinstance(k,bt.leaf) or k.branchType=='leaf':
+                    xvals = []
+                    yvals = []
+                    zvals = []
+                    gvals = []
+                    cur_node = l
+
+                    while cur_node.traits.has_key('location1'):
+                        xvals.append(cur_node.traits['location1'])
+                        yvals.append(cur_node.traits['location2'])
+                        gvals.append(cur_node.traits['clone'])
+                        z = cur_node.x
+                        if z == None:
+                            z = 0.0
+                        zvals.append(z)
+                        cur_node = cur_node.parent
+                    xvals = list(reversed(xvals))
+                    yvals = list(reversed(yvals))
+                    zvals = list(reversed(zvals))
+                    xinterp = np.interp(grid,zvals,xvals) #interpolates path along branch (xlocations)
+                    yinterp = np.interp(grid,zvals,yvals) #interpolates path along branch (ylocations)}
+                    for point in range(len(grid)):
+                        x = str(xinterp[point])
+                        y = str(yinterp[point])
+                        gindex = min(range(len(zvals)), key=lambda i: abs(zvals[i]-grid[point])) ##take group of node closest to grid point
+                        group = gvals[gindex]
+                        outfile.write('\t%s\t%s\t%s'%(x,y,group))
+
+
                         #sys.stderr.write('\t{%s,%s,%s,%s}') %(str(lx),str(ly),str(k.x),str(g))
             ## your analysis and output code goes here, e.g.
             ## if 'custom' in analyses:
@@ -360,5 +409,6 @@ for line in treefile: ## iterate through each line
         ################################################################################
         if 'End;' in line:
             pass
+
 outfile.close()
 sys.stderr.write('\nDone!\n') ## done!
