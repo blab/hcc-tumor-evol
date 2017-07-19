@@ -69,7 +69,7 @@ threshold=progress_update ## threshold at which to update progress bar
 processingRate=[] ## remember how quickly script processes trees
 #############################
 
-available_analyses=['treeLength','RC','Sharp','tmrcas','transitions','subtrees','tslice','lsmooth'] ## analysis names that are possible
+available_analyses=['treeLength','RC','Sharp','tmrcas','transitions','subtrees','tslice','lsmooth','singlenode'] ## analysis names that are possible
 
 assert analyses,'No analyses were selected.'
 for queued_analysis in analyses: ## for each queued analysis check if austechia can do anything about them (i.e. whether they're known analysis types)
@@ -141,7 +141,8 @@ for line in treefile: ## iterate through each line
                     for leaf in range(len(ll.leaves)):
                         for g in grid:
                             outfile.write('\tx%s_%s\ty%s_%s\tg%s_%s'%(str(g),str(leaf),str(g),str(leaf),str(g),str(leaf)))
-
+                if 'singlenode' in analyses:
+                    outfile.write('\tx\ty')
 ############################################################
 
                 ## your custom header making code goes here
@@ -369,8 +370,21 @@ for line in treefile: ## iterate through each line
                         gindex = min(range(len(zvals)), key=lambda i: abs(zvals[i]-grid[point])) ##take group of node closest to grid point
                         group = gvals[gindex]
                         outfile.write('\t%s\t%s\t%s'%(x,y,group))
+            #####################################################################################
+            if 'singlenode' in analyses:
+                target = ['C13|gamma|5.18|6.93', 'C19|gamma|9.02|4.56', 'C25|gamma|1.45|11.45', 'C31|gamma|7.78|8.17', 'C33|gamma|5.29|9.98', 'C35|gamma|2.81|11.67', 'C36|gamma|1.45|12.80', 'C3|gamma|3.48|5.69', 'C42|gamma|8.23|9.42', 'C46|gamma|3.03|13.14', 'C54|gamma|8.57|10.88', 'C57|gamma|4.50|13.71', 'C58|gamma|3.15|14.38', 'C5|gamma|6.53|2.64', 'C67|gamma|8.00|13.03', 'C68|gamma|6.65|13.82', 'C69|gamma|5.29|14.61',
+                'C6|gamma|5.18|5.24', 'C70|gamma|3.71|15.51', 'C79|gamma|6.65|15.29', 'C80|gamma|4.95|15', 'C8|gamma|1.23|8.06']
+                for k in ll.nodes:
+                    children_names = []
+                    for c in k.children:
+                        if isinstance(c,bt.leaf):
+                            children_names.append(c.name)
 
-
+                    c = set(children_names)
+                    t = set(target)
+                    if len(c.symmetric_difference(t)) == 0:
+                        outfile.write('\t%s\t%s'%(k.traits['location1'],k.traits['location2']))
+            #########################################################################################
                         #sys.stderr.write('\t{%s,%s,%s,%s}') %(str(lx),str(ly),str(k.x),str(g))
             ## your analysis and output code goes here, e.g.
             ## if 'custom' in analyses:
