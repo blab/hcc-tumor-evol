@@ -135,6 +135,15 @@ for line in treefile: ## iterate through each line
                 if 'tslice' in analyses:
                     outfile.write('\ttsliceX\ttsliceY\ttsliceZ\tsliceg')
                     a = 0
+                    state_dict = {}
+                    ph = 2 #2's will replace 0s because I define clone by presense of mutation and not absence.
+                    state_dict['zeta'] = [1,1] + [ph] * 33
+                    state_dict['eta'] = [ph,ph] +[1] + [ph] * 32
+                    state_dict['alpha'] = [ph]*5 + [1,1,1,1] + [ph]*26
+                    state_dict['gamma'] = [ph]*9 + [1]*2 + [ph]*24
+                    state_dict['epsilon'] = [ph]*15 + [1,1] +[ph]*18
+                    state_dict['delta'] = [ph]*21 + [1]*4 + [ph]*10
+                    state_dict['beta'] = [ph]*29 + [1] + [ph]*5
                 #############################################################
                 if 'lsmooth' in analyses:
                     grid = np.linspace(0,glength,tipNum)
@@ -308,24 +317,39 @@ for line in treefile: ## iterate through each line
 #                                     outfile.write('\t%s'%(subtreeString))
             ###################################################
             if 'tslice' in analyses:
-                #time = time * ll.treeHeight
+                timen = time * ll.treeHeight
                 a = 0
                 for k in ll.Objects: ## loop through all nodes and leaves of tree
-                    g = k.traits['clone'] # store clone value
-                    if k.x <= time and k.traits['clone'] != 'omega': #and k.traits.has_key('location'): #and  len(k.traits['location']) > 1:
+                    state = list(k.traits['alleles_fasta_meta'])
+                    bestcount = 0
+                    g = 'omega'
+                    for key in state_dict:
+                        index = 0
+                        countlist = []
+                        count = 0
+                        for i in state_dict[key]:
+                            if str(i) == state[index]:
+                                count += 1
+                                if count >= bestcount: #take clone with most shared mutations
+                                    bestcount = count
+                                    g = key
+                            index += 1
+                            if isinstance(k, bt.leaf) and len(k.name.split('|')) > 1: #if you want to decide leaf color based on assigned clones
+                                g = k.name.split('|')[-3]
+                    if k.x <= timen: #and k.traits.has_key('location'): #and  len(k.traits['location']) > 1:
                         lx = k.traits['location1'] #store locations (x, location1, y, location2 )of each object (node or leaf )
                         ly = k.traits['location2']
                         z = k.x #z value is evolutionary distance or absolute time
                         if z == None:
                             z = 0.0
 
-                        if (isinstance(k,bt.node) or k.branchType=='node') and k.x != time: #if node less than time slice point
+                        if (isinstance(k,bt.node) or k.branchType=='node') and k.x != timen: #if node less than time slice point
                             for c in k.children: #check all children
-                                if c.x > time: #if child is on other side of timepoint(spans slice)
+                                if c.x > timen: #if child is on other side of timepoint(spans slice)
                                     lcx = c.traits['location1']
                                     lcy = c.traits['location2']
-                                    lx = np.interp(time,[k.x,c.x],[lx,lcx])
-                                    ly = np.interp(time,[k.x,c.x],[ly,lcy])
+                                    lx = np.interp(timen,[k.x,c.x],[lx,lcx])
+                                    ly = np.interp(timen,[k.x,c.x],[ly,lcy])
                                     #m = (lcy - ly)/(lcx - lx)
                                     #deltaX = (time - k.x)/(c.x - k.x) * (lcx - lx)
                                     #lx = lx + deltaX
@@ -353,7 +377,7 @@ for line in treefile: ## iterate through each line
                     while cur_node.traits.has_key('location1'):
                         xvals.append(cur_node.traits['location1'])
                         yvals.append(cur_node.traits['location2'])
-                        gvals.append(cur_node.traits['clone'])
+                        gvals.append(cur_node.traits['alleles_fasta_meta'])
                         z = cur_node.x
                         if z == None:
                             z = 0.0
