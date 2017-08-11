@@ -64,24 +64,24 @@ To model the expected relationship between genomic and spatial divergence if spa
 
 Each simulation begins with a stem cell object that has a certain proliferation and mutation rate. Stem cells can divide to give rise to either another stem cell (symmetric division) or a clonal cell (asymmetric division) which has an associated mortality rate and limited proliferation capacity. For comparison, a pure clonal model was also implemented. In this model, the origin cell object has a discrete mortality rate and only divides symmetrically to form additional clonal cells. While in the stem cell model clonal cells had limited proliferation potential, in order to maintain a viable tumor in a pure clonal model, cells do not have a discrete proliferation potential.In both models, cells exist in a lattice and replication is confined by the presence of surrounding cells since cells may only divide is there is an adjacent empty lattice slot. The simulation continued until a maximum number of tumor cells (1000) is reached.
 
-In the clonal simulation, cells have a proliferation rate of 1 division per 24 hours and a mortality rate of 0.5 deaths per 24 hours. In the cancer stem cell simulation, both stem cell and clonal cells have an equal division rate of 1 division per 24 hours. Stem cells divide asymmetrically with probability 0.1 and clonal cells have a proliferation capacity of 10. These rates are based on those published in the original model, however, the specific tree structure likely depend greatly on these parameters. 
 
 Clonal Model                                   |  Cancer Stem Cell Model
 :---------------------------------------------:|:-----------------------------------------------:
-![](figures/simultation_genealogy_tree_CC.png) |  ![](figures/simultation_genealogy_tree_CC.png)
-![](figures/CCsimultation_alive_cells.png)     |  ![](figures/CCsimultation_alive_cells.png)
+![](figures/simultation_genealogy_tree_CC.png) |  ![](figures/simultation_genealogy_tree_CSC.png)
+![](figures/CCsimultation_alive_cells.png)     |  ![](figures/CSCsimultation_alive_cells.png)
 
-Generally, the number of mutations present in a cell increase as the tumor expands outwards where there is less resistance to grow, as would be expected based on the enforced spatial constraits. 
+In the clonal simulation, cells have a proliferation rate of 1 division per 24 hours and a mortality rate of 0.5 deaths per 24 hours. In the cancer stem cell simulation, both stem cell and clonal cells have an equal division rate of 1 division per 24 hours. Stem cells divide asymmetrically with probability 0.1 and clonal cells have a proliferation capacity of 10. These rates are based on those published in the original model, however, the specific tree structure likely depend greatly on these parameters. 
 
 #### Simulated spatial divergence
+Generally, the number of mutations present in a cell increase as the tumor expands outwards where there is less resistance to grow, as would be expected based on the enforced spatial constraits and this is confirmed in the pairwise genetic and spacial distance analysis. 
 ![alt text](figures/CSCsimultation_genetic_pair.png) 
 ![alt text](figures/CCsimultation_genetic_pair.png) 
 
 #### LBI ranking= -- Simulated versus observed spatial fitness
 
-[Neher et al.,(2014)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4227306/) developed the Local Branching Index (LBI) as a heuristic to infer fitness based on the shape of the genealogical tree. The algorithm using a messaging system to take into account local branches with exponentially decreasing memory, determined by the \tau  parameter. 
+[Neher et al.,(2014)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4227306/) developed the Local Branching Index (LBI) as a heuristic to infer fitness based on the shape of the genealogical tree. The algorithm using a messaging system to take into account local branches with exponentially decreasing memory, determined by the $tau$  parameter. 
 
-In the simulated models, the LBI rank was highly correlated with spatial distance from the founding cell due to the model's strict growth contraints in the center of the tumor. 
+In the simulated models, the LBI rank was highly correlated with spatial distance from the founding cell due to the model's strict growth contraints in the center of the tumor.
 
 ![alt text](figures/CCsimultation_spatial_LBI_CSC.png)
 ![alt text](figures/CCsimultation_spatial_LBI_CC.png)
@@ -95,6 +95,8 @@ In contrast, there was no correlation between LBI rank and distance from the cen
 This result could be do to limited phylogeny information, or could indicate that fitness is largely determined by factors other than spatial. 
 
 ## Discussion
+Overall, the BEAST software was used to infer the spatial evolution of tumor HCC-15. Generally, genetic and spatial anlysis indicated that tumor cells expand locally, however additional analysis is needed to further define this dynamic. In addition, an effect of spatial location on fitness was not observed, perhaps due to limited sequence data or that other cell-intrinsic or enviromental factors are more important in determining fitness.  
+
 
 
 
