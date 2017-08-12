@@ -73,7 +73,7 @@ In the clonal simulation, cells have a proliferation rate of 1 division per 24 h
 Generally, the number of mutations present in a cell increase as the tumor expands outwards where there is less resistance to grow, as would be expected based on the enforced spatial constraits and this is confirmed in the pairwise genetic and spacial distance analysis. 
 ![alt text](figures/simultation_genetic_pair_combined.png) 
 
-#### LBI ranking= -- Simulated versus observed spatial fitness
+#### LBI ranking -- Simulated versus observed spatial fitness
 
 [Neher et al.,(2014)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4227306/) developed the Local Branching Index (LBI) as a heuristic to infer fitness based on the shape of the genealogical tree. The algorithm using a messaging system to take into account local branches with exponentially decreasing memory, determined by the $tau$  parameter. 
 
@@ -81,7 +81,12 @@ In the simulated models, the LBI rank was highly correlated with spatial distanc
 
 ![alt text](figures/simultation_spatial_LBI_combined.png)
 ![alt text](figures/CSCsimultation_distance_LBI.png)
-![alt text](figures/CCsimultation_distance_LBI.png)_
+![alt text](figures/CCsimultation_distance_LBI.png)
+
+This analysis was completed accross 100 iterations of both the CSC and clonal model. From this the average nonparametric curve and 95% confidenced intervals indicated that increased fitness with increased distance from the founding cells is consistent accross simulations, with slightly more variability in the CSC model. 
+![alt text](figures/CC_LBIsim.png)
+![alt test](figures/CSC_LBIsim.png)
+
 
 In contrast, there was no correlation between LBI rank and distance from the center of the tumor in the observed tumor data based on the inferred phylogenies. 
 ![alt text](figures/expcol_yule_lbi_rank_scatter.png)
