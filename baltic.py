@@ -220,7 +220,7 @@ class tree: ## tree class
         """ provide information about the tree """
         self.traverse_tree() ## traverse the tree
         obs=self.Objects ## convenient list of all objects in the tree
-        print '\nTree height: %.6f\nTree length: %.6f'%(self.treeHeight,sum([x.length for x in obs])) ## report the height and length of tree
+        print('\nTree height: %.6f\nTree length: %.6f'%(self.treeHeight,sum([x.length for x in obs]))) ## report the height and length of tree
 
         nodes=self.nodes ## get all nodes
         strictlyBifurcating=False ## assume tree is not strictly bifurcating
@@ -243,20 +243,20 @@ class tree: ## tree class
             hasTraits=True ## there are annotations
 
         if strictlyBifurcating:
-            print 'strictly bifurcating tree' ## report
+            print('strictly bifurcating tree') ## report
         if multiType:
-            print 'multitype tree' ## report
+            print('multitype tree') ## report
         if singleton:
-            print 'singleton tree'
+            print('singleton tree')
         if hasTraits:
-            print 'annotations present' ## report
+            print('annotations present') ## report
 
 
-        print '\nNumbers of objects in tree: %d (%d nodes and %d leaves)\n'%(len(obs),len(nodes),len(obs)-len(nodes)) ## report numbers of different objects in the tree
+        print('\nNumbers of objects in tree: %d (%d nodes and %d leaves)\n'%(len(obs),len(nodes),len(obs)-len(nodes))) ## report numbers of different objects in the tree
 
     def traverse_tree(self,startNode=None,include_all=False,verbose=False):
         """ Traverses tree from root. If a starting node is not defined begin traversal from root. By default returns a list of leaf objects that have been visited, optionally returns a list of all objects in the tree. """
-        if startNode==None: ## if no starting point defined - start from root
+        if startNode is None: ## if no starting point defined - start from root
             cur_node=self.root
             start=None ## remember that traversal was started from scratch
             startNode=cur_node
@@ -274,7 +274,7 @@ class tree: ## tree class
         self.nodes=[k for k in self.Objects if isinstance(k,node)]
 
         if verbose==True:
-            print 'Verbose traversal initiated'
+            print('Verbose traversal initiated')
 
         for k in self.Objects: ## reset leaves and number of children for every node
             if isinstance(k,node):
@@ -284,7 +284,9 @@ class tree: ## tree class
         seen=[] ## remember what's been visited
         collected=[] ## collect leaf objects along the way
         maxHeight=0 ## check what the maximum distance between the root and the most recent tip is
-        if startNode!=None and startNode.height!=None:
+        #highestTip=0.0
+
+        if startNode is not None and startNode.height is not None:
             height=startNode.height
         else:
             height=0.0 ## begin at height 0.0
@@ -294,42 +296,45 @@ class tree: ## tree class
         while root==False: ## cycle indefinitely as long as there's more of the tree to explore
             if seen.count(cur_node.index)>3:
                 if verbose==True:
-                    print 'node %s seen too many times, breaking'%(cur_node.index)
+                    print('node %s seen too many times, breaking'%(cur_node.index))
                 root=True
                 break
 
             if cur_node.branchType=='node': ## if currently dealing with a node
                 if verbose==True:
-                    print 'encountered node %s'%(cur_node.index)
+                    print('encountered node %s'%(cur_node.index))
                 if include_all==True: ## if node hasn't been collected and we want to collect all objects - add it for reporting later
                     collected.append(cur_node)
+
                 ## check whether all children of the node have been seen or whether we're not currently at the root
                 ## as long as all children have been seen will descend downwards
-                while sum([1 if x.index in seen else 0 for x in cur_node.children])==len(cur_node.children) and cur_node!=startNode.parent:
-                    if verbose==True:
-                        print 'seen all children of node %s'%(cur_node.index)
+                if len(cur_node.children) > 1:
+                    while sum([1 if x.index in seen else 0 for x in cur_node.children])==len(cur_node.children) and cur_node!=startNode.parent:
+                        if verbose==True:
+                        p   rint('seen all children of node %s'%(cur_node.index))
                     ## check wheteher current node's most recent child is higher than the known highest point in the tree
-                    if cur_node.childHeight <= highestTip:
-                        cur_node.childHeight = highestTip
-                    elif cur_node.childHeight > highestTip:
-                        highestTip = cur_node.childHeight
 
-                    if cur_node.index==startNode.index: ## if currently at root - set the root flag to True and break the while loop
-                        if verbose==True:
-                            print 'reached starting point %s'%(cur_node.index)
-                        cur_node.height=height
-                        root=True
-                        break
-                    else: ## otherwise...
-                        if verbose==True:
-                            print 'heading to parent of %s'%(cur_node.index)
-                        cur_node.parent.numChildren+=cur_node.numChildren ## add the number of current node's children to its parent
-                        cur_node.parent.leaves+=cur_node.leaves ## add the list of tip names descended from current node to its parent
-                        cur_node.parent.leaves=unique(cur_node.parent.leaves) ## reduce to only unique names
-                        cur_node.parent.leaves=sorted(cur_node.parent.leaves) ## sort children
-                        cur_node.height=height ## set height
-                        height-=float(cur_node.length) ## prepare height value for the eventual descent downwards in the tree
-                        cur_node=cur_node.parent ## current node is now current node's parent
+                        if cur_node.childHeight <= highestTip:
+                            cur_node.childHeight = highestTip
+                        elif cur_node.childHeight > highestTip:
+                            highestTip = cur_node.childHeight
+
+                        if cur_node.index==startNode.index: ## if currently at root - set the root flag to True and break the while loop
+                            if verbose==True:
+                                print('reached starting point %s'%(cur_node.index))
+                                cur_node.height=height
+                                root=True
+                                break
+                        else: ## otherwise...
+                            if verbose==True:
+                                print('heading to parent of %s'%(cur_node.index))
+                            cur_node.parent.numChildren+=cur_node.numChildren ## add the number of current node's children to its parent
+                            cur_node.parent.leaves+=cur_node.leaves ## add the list of tip names descended from current node to its parent
+                            cur_node.parent.leaves=unique(cur_node.parent.leaves) ## reduce to only unique names
+                            cur_node.parent.leaves=sorted(cur_node.parent.leaves) ## sort children
+                            cur_node.height=height ## set height
+                            height-=float(cur_node.length) ## prepare height value for the eventual descent downwards in the tree
+                            cur_node=cur_node.parent ## current node is now current node's parent
 
                 last_seen=[1 if x.index in seen else 0 for x in cur_node.children] ## put 1 for every child of the node that you have seen, 0 for every one that hasn't been seen
 
@@ -339,7 +344,7 @@ class tree: ## tree class
                     idx_to_visit=0 ## no children seen yet
 
                 if verbose==True:
-                    print 'visiting %s next (child of %s)'%(cur_node.children[idx_to_visit].index,cur_node.index)
+                    print('visiting %s next (child of %s)'%(cur_node.children[idx_to_visit].index,cur_node.index))
 
                 cur_node.height=height ## set height of current node
                 height+=float(cur_node.children[idx_to_visit].length) ## prepare for heading towards the previously unvisited child branch
@@ -348,7 +353,7 @@ class tree: ## tree class
 
             elif cur_node.branchType=='leaf': ## node dealing with node, are we dealing with a leaf (tip)?
                 if verbose==True:
-                    print 'encountered leaf %s (%s or %s)'%(cur_node.index,cur_node.numName,cur_node.name)
+                    print('encountered leaf %s (%s or %s)'%(cur_node.index,cur_node.numName,cur_node.name))
                 cur_node.parent.numChildren+=1 ## parent has one more new child (congratulations!)
                 cur_node.parent.leaves.append(cur_node.numName) ## add the name of leaf to its parent's list of children names
                 cur_node.parent.leaves=sorted(cur_node.parent.leaves) ## sort parent's children list
@@ -573,7 +578,7 @@ class tree: ## tree class
         collapsedClade.width=widthFunction(len(cl.leaves))
 
         if verbose==True:
-            print 'Replacing node %s (parent %s) with a clade class'%(cl.index,cl.parent.index)
+            print('Replacing node %s (parent %s) with a clade class'%(cl.index,cl.parent.index))
         parent=cl.parent
         #collapsedClade.subtree=cl
 
@@ -622,42 +627,42 @@ class tree: ## tree class
                 def get_value(ob,tr):
                     return getattr(ob,tr)
                 if verbose==True:
-                    print 'Collapsing based on attribute'
+                    print('Collapsing based on attribute')
             else: ## not every node has attribute - assume dealing with trait
                 def get_value(ob,tr):
                     return ob.traits[tr]
                 if verbose==True:
-                    print 'Collapsing based on trait'
+                    print('Collapsing based on trait')
             nodes_to_delete=[n for n in newTree.nodes if n.traits.has_key(trait) and f(get_value(n,trait))==True] ## fetch a list of all nodes who are not the root and who satisfy the condition
         else:
             assert [w.branchType for w in designated_nodes].count('node')==len(designated_nodes),'Non-node class detected in list of nodes designated for deletion'
             assert len([w for w in designated_nodes if w.parent.index=='Root'])==0,'Root node was designated for deletion'
             nodes_to_delete=[w for w in newTree.Objects if w.index in [q.index for q in designated_nodes]] ## need to look up nodes designated for deletion by their indices, since the tree has been copied and nodes will have new memory addresses
         if verbose==True:
-            print '%s nodes set for collapsing: %s'%(len(nodes_to_delete),[w.index for w in nodes_to_delete])
+            print('%s nodes set for collapsing: %s'%(len(nodes_to_delete),[w.index for w in nodes_to_delete]))
         assert len(nodes_to_delete)<len(newTree.nodes)-1,'Chosen cutoff would remove all branches'
         while len(nodes_to_delete)>0: ## as long as there are branches to be collapsed - keep reducing the tree
             if verbose==True:
-                print 'Continuing collapse cycle, %s nodes left'%(len(nodes_to_delete))
+                print('Continuing collapse cycle, %s nodes left'%(len(nodes_to_delete)))
             for k in sorted(nodes_to_delete,key=lambda x:-x.height): ## start with branches near the tips
                 zero_node=k.children ## fetch the node's children
                 k.parent.children+=zero_node ## add them to the zero node's parent
                 old_parent=k ## node to be deleted is the old parent
                 new_parent=k.parent ## once node is deleted, the parent to all their children will be the parent of the deleted node
                 if verbose==True:
-                    print 'Removing node %s, attaching children %s to node %s'%(old_parent.index,[w.index for w in k.children],new_parent.index)
+                    print('Removing node %s, attaching children %s to node %s'%(old_parent.index,[w.index for w in k.children],new_parent.index))
                 for w in newTree.Objects: ## assign the parent of deleted node as the parent to any children of deleted node
                     if w.parent==old_parent:
                         w.parent=new_parent
                         w.length+=old_parent.length
                         if verbose==True:
-                            print 'Fixing branch length for node %s'%(w.index)
+                            print('Fixing branch length for node %s'%(w.index))
                 k.parent.children.remove(k) ## remove traces of deleted node - it doesn't exist as a child, doesn't exist in the tree and doesn't exist in the nodes list
                 newTree.Objects.remove(k)
                 newTree.nodes.remove(k)
                 nodes_to_delete.remove(k) ## in fact, the node never existed
                 if verbose==True:
-                    print 'Removing references to node %s'%(k.index)
+                    print('Removing references to node %s'%(k.index))
         newTree.sortBranches() ## sort the tree to traverse, draw and sort tree to adjust y coordinates
         return newTree ## return collapsed tree
 
@@ -671,7 +676,7 @@ class tree: ## tree class
         while root==False:
             if cur_node.branchType=='node':
                 if verbose==True:
-                    print 'Encountered node %s'%(cur_node.index)
+                    print('Encountered node %s'%(cur_node.index))
                 ## if all children have been seen and not at root
                 while sum([1 if x.index in seen else 0 for x in cur_node.children])==len(cur_node.children) and cur_node.index!='Root':
                     if cur_node.parent.index=='Root':
@@ -771,7 +776,7 @@ class tree: ## tree class
 
             elif cur_node.branchType=='leaf':
                 if verbose==True:
-                    print 'Encountered leaf %s'%(cur_node.index)
+                    print('Encountered leaf %s'%(cur_node.index))
                 seen.append(cur_node.index)
                 if cur_node.parent.index=='Root':
                     root=True
@@ -840,42 +845,42 @@ def make_tree(data,ll,verbose=False):
 
     while i < len(data): ## while there's characters left in the tree string - loop away
         if stored_i == i and verbose==True:
-            print '%d >%s<'%(i,data[i])
+            print('%d >%s<'%(i,data[i]))
 
         assert (stored_i != i),'\nTree string unparseable\nStopped at >>%s<<\nstring region looks like this: %s'%(data[i],data[i:i+5000]) ## make sure that you've actually parsed something last time, if not - there's something unexpected in the tree string
         stored_i=i ## store i for later
 
         if data[i] == '(': ## look for new nodes
             if verbose==True:
-                print '%d adding node'%(i)
+                print('%d adding node'%(i))
             ll.add_node(i) ## add node to current node in tree ll
             i+=1 ## advance in tree string by one character
 
         cerberus=re.match('(\(|,)([0-9]+)(\[|\:)',data[i-1:i+100]) ## look for tips in BEAST format (integers).
         if cerberus is not None:
             if verbose==True:
-                print '%d adding leaf (BEAST) %s'%(i,cerberus.group(2))
+                print('%d adding leaf (BEAST) %s'%(i,cerberus.group(2)))
             ll.add_leaf(i,cerberus.group(2)) ## add tip
             i+=len(cerberus.group(2)) ## advance in tree string by however many characters the tip is encoded
 
         cerberus=re.match('(\(|,)(\'|\")*([A-Za-z\_\-\|\.0-9\?\/]+)(\'|\"|)(\[)*',data[i-1:i+200])  ## look for tips with unencoded names - if the tips have some unusual format you'll have to modify this
         if cerberus is not None:
             if verbose==True:
-                print '%d adding leaf (non-BEAST) %s'%(i,cerberus.group(3))
+                print('%d adding leaf (non-BEAST) %s'%(i,cerberus.group(3)))
             ll.add_leaf(i,cerberus.group(3).strip('"').strip("'"))  ## add tip
             i+=len(cerberus.group(3))+cerberus.group().count("'")+cerberus.group().count('"') ## advance in tree string by however many characters the tip is encoded
 
         cerberus=re.match('\)([0-9]+)\[',data[i-1:i+100]) ## look for multitype tree singletons.
         if cerberus is not None:
             if verbose==True:
-                print '%d adding multitype node %s'%(i,cerberus.group(1))
+                print('%d adding multitype node %s'%(i,cerberus.group(1)))
             i+=len(cerberus.group(1))
 
         cerberus=re.match('(\:)*\[&([A-Za-z\_\-{}\,0-9\.\%=\"\+!#]+)\]',data[i:])## look for MCC comments
         #cerberus=re.match('\[&[A-Za-z\_\-{}\,0-9\.\%=\"\+]+\]',data[i:])## look for MCC comments
         if cerberus is not None:
             if verbose==True:
-                print '%d comment: %s'%(i,cerberus.group(2))
+                print('%d comment: %s'%(i,cerberus.group(2)))
             comment=cerberus.group(2)
             numerics=re.findall('[A-Za-z\_\.0-9]+=[0-9\-Ee\.]+',comment) ## find all entries that have values as floats
             strings=re.findall('[A-Za-z\_\.0-9]+=["|\']*[A-Za-z\_0-9\.\+]+["|\']*',comment) ## strings
@@ -935,18 +940,18 @@ def make_tree(data,ll,verbose=False):
 
 
                 else:
-                    print 'some other trait: %s'%(vals)
+                    print('some other trait: %s'%(vals))
 
 
             if len(figtree)>0:
-                print 'FigTree comment found, ignoring'
+                print('FigTree comment found, ignoring')
 
             i+=len(cerberus.group()) ## advance in tree string by however many characters it took to encode labels
 
         cerberus=re.match('([A-Za-z\_\-0-9\.]+)(\:|\;)',data[i:])## look for old school node labels
         if cerberus is not None:
             if verbose==True:
-                print 'old school comment found: %s'%(cerberus.group(1))
+                print('old school comment found: %s'%(cerberus.group(1)))
             ll.cur_node.traits['label']=cerberus.group(1)
 
             i+=len(cerberus.group(1))
@@ -954,7 +959,7 @@ def make_tree(data,ll,verbose=False):
         microcerberus=re.match('(\:)*([0-9\.\-Ee]+)',data[i:i+100]) ## look for branch lengths without comments
         if microcerberus is not None:
             if verbose==True:
-                print 'adding branch length (%d) %.6f'%(i,float(microcerberus.group(2)))
+                print('adding branch length (%d) %.6f'%(i,float(microcerberus.group(2))))
             ll.cur_node.length=float(microcerberus.group(2)) ## set branch length of current node
             i+=len(microcerberus.group()) ## advance in tree string by however many characters it took to encode branch length
 
@@ -977,7 +982,7 @@ def loadNexus(tree_path,tip_regex='\|([0-9]+\-[0-9]+\-[0-9]+)',date_fmt='%Y-%m-%
         if cerberus is not None:
             tipNum=int(cerberus.group(1))
             if verbose==True:
-                print 'File should contain %d taxa'%(tipNum)
+                print('File should contain %d taxa'%(tipNum))
 
         cerberus=re.search(treestring_regex,l)
         if cerberus is not None:
@@ -985,16 +990,16 @@ def loadNexus(tree_path,tip_regex='\|([0-9]+\-[0-9]+\-[0-9]+)',date_fmt='%Y-%m-%
             ll=tree() ## new instance of tree
             make_tree(l[treeString_start:],ll) ## send tree string to make_tree function
             if verbose==True:
-                print 'Identified tree string'
+                print('Identified tree string')
 
         if tipFlag==True:
             cerberus=re.search('([0-9]+) ([A-Za-z\-\_\/\.\'0-9 \|?]+)',l)
             if cerberus is not None:
                 tips[cerberus.group(1)]=cerberus.group(2).strip('"').strip("'")
                 if verbose==True:
-                    print 'Identified tip translation %s: %s'%(cerberus.group(1),tips[cerberus.group(1)])
+                    print('Identified tip translation %s: %s'%(cerberus.group(1),tips[cerberus.group(1)]))
             elif ';' not in l:
-                print 'tip not captured by regex:',l.replace('\t','')
+                print('tip not captured by regex:',l.replace('\t',''))
 
         if 'translate' in l.lower():
             tipFlag=True
