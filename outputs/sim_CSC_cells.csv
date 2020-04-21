@@ -1,4 +1,4 @@
-,alpha,birthdate,deathdate,index,locx,loxy,mutation_rate,mutations,parent_index,proliferation_rate
+,alpha,birthdate,deathdate,index,locx,locy,mutation_rate,mutations,parent_index,proliferation_rate
 0,0.0,0.0,15.208333333333252,0,500,500,0.1,[0],0,1
 1,0.0,1.5416666666666672,15.208333333333252,1,499,501,0.1,[0],0,1
 2,0.0,1.7500000000000009,15.208333333333252,2,500,499,0.1,[0],0,1

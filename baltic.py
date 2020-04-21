@@ -308,10 +308,10 @@ class tree: ## tree class
 
                 ## check whether all children of the node have been seen or whether we're not currently at the root
                 ## as long as all children have been seen will descend downwards
-                if len(cur_node.children) > 1:
+                if startNode.parent is not None:
                     while sum([1 if x.index in seen else 0 for x in cur_node.children])==len(cur_node.children) and cur_node!=startNode.parent:
                         if verbose==True:
-                        p   rint('seen all children of node %s'%(cur_node.index))
+                        print('seen all children of node %s'%(cur_node.index))
                     ## check wheteher current node's most recent child is higher than the known highest point in the tree
 
                         if cur_node.childHeight <= highestTip:
@@ -329,12 +329,12 @@ class tree: ## tree class
                             if verbose==True:
                                 print('heading to parent of %s'%(cur_node.index))
                             cur_node.parent.numChildren+=cur_node.numChildren ## add the number of current node's children to its parent
-                            cur_node.parent.leaves+=cur_node.leaves ## add the list of tip names descended from current node to its parent
-                            cur_node.parent.leaves=unique(cur_node.parent.leaves) ## reduce to only unique names
-                            cur_node.parent.leaves=sorted(cur_node.parent.leaves) ## sort children
-                            cur_node.height=height ## set height
-                            height-=float(cur_node.length) ## prepare height value for the eventual descent downwards in the tree
-                            cur_node=cur_node.parent ## current node is now current node's parent
+                        cur_node.parent.leaves+=cur_node.leaves ## add the list of tip names descended from current node to its parent
+                        cur_node.parent.leaves=unique(cur_node.parent.leaves) ## reduce to only unique names
+                        cur_node.parent.leaves=sorted(cur_node.parent.leaves) ## sort children
+                        cur_node.height=height ## set height
+                        height-=float(cur_node.length) ## prepare height value for the eventual descent downwards in the tree
+                        cur_node=cur_node.parent ## current node is now current node's parent
 
                 last_seen=[1 if x.index in seen else 0 for x in cur_node.children] ## put 1 for every child of the node that you have seen, 0 for every one that hasn't been seen
 
