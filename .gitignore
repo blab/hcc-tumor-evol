@@ -2,7 +2,8 @@
 *.checkpoint.ipynb
 *ipynb_checkpoints/
 *.out.txt
-*.trees
+**.trees
+**.tree
 *.trees.txt
 samogitia2_7.txt
 samogitia1_0.txt
