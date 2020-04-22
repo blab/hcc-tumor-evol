@@ -3,18 +3,12 @@
 #load packages
 library(tidyverse)
 library(cluster)
-
-#intializatin
+library(ggtree)
+library(phytools)
+library(ape)
+#intializatoin
 set.seed(192837)
 setwd("/Users/mayalewinsohn/Documents/PhD/Bedford_lab/hcc-tumor-evol")
-
-#read in simulation data
-CC_sim_cells <- read.csv("outputs/sim_CC_cells.csv")
-CSC_sim_cells <- read.csv("outputs/sim_CSC_cells.csv")
-
-
-#temp global var for developing functions
-cells_df <- CC_sim_cells
 
 #first normalize locations so that 0 is the center
 normalize_locs <- function(cells){
@@ -25,7 +19,13 @@ normalize_locs <- function(cells){
   return(norm_cells)
 }
 
-norm_cells_df <- normalize_locs(cells_df)
+#read in simulation data
+CC_sim_cells <- read.csv("outputs/sim_CC_cells.csv") %>% 
+  normalize_locs
+CSC_sim_cells <- read.csv("outputs/sim_CSC_cells.csv") %>% 
+  normalize_locs
+
+
 #calculate parameters of simulations
 # calc_sim_stats <- function(cells_df) {
 #   stats_df <- data.frame("avg_mutation_rate" = mean(cells_df$mutation_rate),
@@ -43,7 +43,7 @@ norm_cells_df <- normalize_locs(cells_df)
 filter_alive_cells <- function(cells_df) {
   endpoint <- max(cells_df$deathdate)
   
-  alive_cells <- cells_df %>% 
+  alive_cells <- cells_df%>% 
     filter(deathdate == endpoint)
   
   return(alive_cells)
@@ -158,12 +158,12 @@ cluster_cells <- function(sampled_cells, k = 5) {
 }
 
 set.seed(2018)
-clustered_cells <- cluster_cells(sampled_cells, k = 7)
+CC_clustered_cells <- cluster_cells(CC_sampled_cells, k = 7)
 
 
 plot_clustered_cells <- function(clustered_cells, model = "") {
-  g <- ggplot(clustered_cells, aes(x = locx,
-                                 y = locy,
+  g <- ggplot(clustered_cells, aes(x = norm_locx,
+                                 y = norm_locy,
                                  color = 
                                                 as.factor(cluster)
                                                 )
@@ -179,46 +179,45 @@ plot_clustered_cells <- function(clustered_cells, model = "") {
   g
 }
 
-plot_clustered_cells(clustered_cells)
+plot_clustered_cells(CC_clustered_cells)
 
 
 #first normalize locations so that 0 is the center
-normalize_locs <- function(cells){
-  center_x <- min(cells$locx) + (max(cells$locx) - min(cells$locx))/2
-  center_y <- min(cells$locy) + (max(cells$locy) - min(cells$locy))/2
-  norm_cells <- cells %>% 
-    mutate("norm_locx" = locx - center_x, "norm_locy" = locy - center_y)
-  return(norm_cells)
-}
 
-
-normalized_cell <- normalize_locs(clustered_cells)
 
 
 #generate fasta file for beast
+#should be folllwing format:
 #>index|clone|xloc|yloc
 #1100---000000-00000-000-0000-0-0---
-final_sampled_cells <- normalized_cell %>% 
+
+#filter to only sampled cells
+final_sampled_cells <- CC_sampled_cells %>% 
   filter(sampled == TRUE)
 
-final_sampled_muts <- define_mut_presence_absence(sampled_cells)[which(final_sampled_cells$sampled == TRUE),]
+write.csv(final_sampled_cells, file = "outputs/CC_final_sampled_cells.csv")
+#define presence/absense of mutations and filter for sampled muts
+final_sampled_muts <- define_mut_presence_absence(CC_sampled_cells)[which(final_sampled_cells$sampled == TRUE),]
+
+
 final_sampled_muts <- final_sampled_muts[, colSums(final_sampled_muts != 0) > 0]
 
-#final_sampled_muts[final_sampled_muts==0]<-"A"
-#final_sampled_muts[final_sampled_muts==1]<-"G"
+#write fasta file for sampled cells and mutations
 
 fasta_file <- "outputs/CC_sim.fa"
 
+#start new file for first line
 write(c(paste0(">",
                final_sampled_cells$index[1],
                "|",
                final_sampled_cells$norm_locx[1],
                "|",
                final_sampled_cells$norm_locy[1]),
-        paste(final_sampled_muts[i,], collapse = '')),
+        paste(final_sampled_muts[1,], collapse = '')),
       file = fasta_file,
       append=FALSE)
 
+#then append other lines
 for (i in 2:nrow(final_sampled_cells)) {
   
   write(c(paste0(">",
@@ -233,7 +232,9 @@ for (i in 2:nrow(final_sampled_cells)) {
 
 }
 
-#find MRCA of sampled cells
+####### Phylogenetic analysis of ground truth of simulation
+
+#function to collect all ancestors of cell
 
 collect_all_ancestors <- function(index, all_cells, ancestors = c()) {
   if( index == 0) {
@@ -244,9 +245,7 @@ collect_all_ancestors <- function(index, all_cells, ancestors = c()) {
   }
 }
 
-test <- collect_all_ancestors(index = 42, cells_df)
-test_2 <- collect_all_ancestors(index = 153, cells_df)
-test[min(which(test %in% test_2))]
+#function to find MRCA between two cells given indexes
 
 find_MRCA <- function(index_1, index_2, all_cells) {
   ancestors_1 <- collect_all_ancestors(index_1, all_cells)
@@ -255,10 +254,15 @@ find_MRCA <- function(index_1, index_2, all_cells) {
   return(mrca)
 }
 
+
+#function to take df of cells in simulation and convert to phylo class object
+
 collect_nodes_for_phylo <- function(orphan_cells, all_cells, n, node_vec = c(),
                                     edge_matrix = matrix(ncol=2), edge_lengths = c()) {
+  
   all_cells <- all_cells %>% arrange(index)
-  #if just starting record information for leaves
+ 
+   #if just starting record information for leaves
   if (length(node_vec) == 0) {
     node_vec <- orphan_cells
     n <- length(orphan_cells)
@@ -269,7 +273,9 @@ collect_nodes_for_phylo <- function(orphan_cells, all_cells, n, node_vec = c(),
                              "y_coord" = all_cells[node_vec+1,"norm_locy"])
   
     return(list("trait_data" = trait_data, "edge_matrix" = edge_matrix[-1,], "edge_lengths" = edge_lengths))
-  } else {
+  
+  }else {
+    
     #make all pariwise combinations of cells without mrca
     all_combs <- as.data.frame(t(combn(orphan_cells, 2)))
     
@@ -280,78 +286,56 @@ collect_nodes_for_phylo <- function(orphan_cells, all_cells, n, node_vec = c(),
     #find youngest ancestor and two children
     youngest_ancestor <- common_ancestors_data$index[common_ancestors_data$birthdate == max(common_ancestors_data$birthdate)]
     
-    if (length(youngest_ancestor) == 1) {
-
-    #add new node 
-    node_vec <- c(node_vec, youngest_ancestor)
-
-    child_1 <- all_combs[which(common_ancestors == youngest_ancestor),1]
-    child_2 <- all_combs[which(common_ancestors == youngest_ancestor),2]
-    c1 <- which(node_vec == child_1)
-    c2 <- which(node_vec == child_2)
-    a <- length(node_vec)
-
-    #update edge matrrix
-    edge_matrix <- rbind(edge_matrix, c(a,c1), c(a,c2))
-    
-    if (c1 <= n) {
-      t_c1 <- all_cells[child_1+1, "deathdate"]
-    } else {
-      t_c1 <- all_cells[child_1+1, "birthdate"]
-    }
-    
-    if (c2 <= n) {
-      t_c2 <- all_cells[child_2+1, "deathdate"]
-    } else {
-      t_c2 <- all_cells[child_2+1, "birthdate"]
-    }
-    
-    t_a <- all_cells[youngest_ancestor+1, "birthdate"]
-    
-    edge_lengths <- c(edge_lengths, (t_c1 - t_a), t_c2 - t_a)
-    
-    orphan_cells <- orphan_cells[orphan_cells != child_1]
-    orphan_cells <- orphan_cells[orphan_cells != child_2]
-    orphan_cells <- c(orphan_cells, youngest_ancestor)
-  
-    } else {
+    #in case more than 2 cells have same ancestor
     youngest_ancestor <- youngest_ancestor[1]
+    
+    #add ancestor to nodes on tree
     node_vec <- c(node_vec, youngest_ancestor)
+    
+    #keep track of children descended from that ancestor
     children <- unique(unlist(all_combs[which(common_ancestors == youngest_ancestor),]))
     
+    #node number
     a <- length(node_vec)
+    
+    #get time info for ancestor
     t_a <- all_cells[youngest_ancestor+1, "birthdate"]
-
+    
+    #make edges for each child
 
     for (child in children) {
 
       c <- which(node_vec == child)
-      if (c <= n) {
-        t_c <- all_cells[child_1+1, "deathdate"]
-      } else {
-        t_c <- all_cells[child_1+1, "birthdate"]
+      if (c <= n) { #if leaf
+        
+        t_c <- all_cells[child + 1, "deathdate"] #use deathdate
+      
+        } else { #if node
+        
+          t_c <- all_cells[child + 1, "birthdate"] #use birthday
       }
-      edge_matrix <- rbind(edge_matrix, c(a,c))
-      edge_lengths <- c(edge_lengths, t_c - t_a)
-      orphan_cells <- orphan_cells[orphan_cells != child]
-      }
-    orphan_cells <- c(orphan_cells, youngest_ancestor)
+      
+      edge_matrix <- rbind(edge_matrix, c(a,c)) #add edge
+      edge_lengths <- c(edge_lengths, t_c - t_a) #add lengths
+      orphan_cells <- orphan_cells[orphan_cells != child] #remove from orphan cells
     }
+    
+    orphan_cells <- c(orphan_cells, youngest_ancestor) #add ancestor as orphan
+    
+    #recursive function
     return(collect_nodes_for_phylo(orphan_cells, all_cells, n, node_vec = node_vec,
                                         edge_matrix = edge_matrix, edge_lengths = edge_lengths))
-    
-    
+ 
   }
   
 }
+
+#test for clonal simulation results
 leaves <- final_sampled_cells$index
-tree_info <- collect_nodes_for_phylo(leaves, norm_cells_df)
-tr <- list(edge = tree_info$edge_matrix, tip.label = leaves, Nnode = (length(leaves) - 1),
+tree_info <- collect_nodes_for_phylo(leaves, CC_sim_cells)
+tr <- list(edge = tree_info$edge_matrix, tip.label = as.character(leaves), Nnode = (length(leaves) - 1),
            edge.length = tree_info$edge_lengths)
 class(tr) <- "phylo"
 
-plot(tr)
 ggtree(tr)
-#for tree
-#nodes list
-find_MRCA(42,153,cells_df)
+
