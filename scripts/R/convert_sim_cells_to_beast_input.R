@@ -20,22 +20,11 @@ normalize_locs <- function(cells){
 }
 
 #read in simulation data
-CC_sim_cells <- read.csv("outputs/sim_CC_cells.csv") %>% 
+CC_sim_cells <- read.csv("outputs/sim_CC_cells_2.csv") %>% 
   normalize_locs
-CSC_sim_cells <- read.csv("outputs/sim_CSC_cells.csv") %>% 
-  normalize_locs
+# CSC_sim_cells <- read.csv("outputs/sim_CSC_cells.csv") %>% 
+#   normalize_locs
 
-
-#calculate parameters of simulations
-# calc_sim_stats <- function(cells_df) {
-#   stats_df <- data.frame("avg_mutation_rate" = mean(cells_df$mutation_rate),
-#                          "avg_proliferation_rate" = mean(cells_df$proliferation_rate),
-#                          "avg_death_rate" = mean(cells_df$alpha))
-#   return(stats_df)
-# }
-# 
-# CC_stats_df <- calc_sim_stats(CC_sim_cells)
-# CC_stats_df <- calc_sim_stats(CC_sim_cells)
 
 
 #filter surviving cells
@@ -65,16 +54,16 @@ sample_alive_cells <- function(alive_cells, n){
 
 CC_sampled_cells <- CC_sim_cells %>% 
   filter_alive_cells %>% 
-  sample_alive_cells(., n = 20)
+  sample_alive_cells(., n = 50)
 
-CSC_sampled_cells <- CSC_sim_cells %>% 
-  filter_alive_cells %>% 
-  sample_alive_cells(., n = 20)
+# CSC_sampled_cells <- CSC_sim_cells %>% 
+#   filter_alive_cells %>% 
+#   sample_alive_cells(., n = 20)
 
 #plotting sampled and simulated cells
 plot_sampled_cells <- function(sampled_cells, model = "") {
-  g <- ggplot(sampled_cells, aes(x = locx,
-                                 y = locy,
+  g <- ggplot(sampled_cells, aes(x = norm_locx,
+                                 y = norm_locy,
                                  color = sampled)) +
     geom_point(size = 2.5) +
     theme_bw() +
@@ -88,9 +77,11 @@ plot_sampled_cells <- function(sampled_cells, model = "") {
 }
 
 
-plot_sampled_cells(CC_sampled_cells, "Clonal model")
-plot_sampled_cells(CSC_sampled_cells, "CSC model")
+cc_sampled_plot <- plot_sampled_cells(CC_sampled_cells, "Clonal model")
+#csc_sampled_plot <- plot_sampled_cells(CSC_sampled_cells, "CSC model")
 
+ggsave(filename = "figures/spatial_sim/cc_sampled_plot_2.png", cc_sampled_plot)
+#ggsave(filename = "figures/spatial_sim/csc_sampled_plot.png", csc_sampled_plot)
 #convert sampled alive cells into mutation matrix
 
 
@@ -119,14 +110,16 @@ isolate_muts <- function(i, mutations_vec, mutations_column) { #recurisve functi
 }
 
 get_row_muts <- function(mutations_row) {
-  row_muts <- na.omit(
-    as.numeric(
-      unlist(
-        strsplit(as.character(mutations_row),"[^0-9]")
+  
+    row_muts <- na.omit(
+      as.numeric(
+        unlist(
+          strsplit(as.character(mutations_row),"[^0-9]")
+        )
       )
     )
-  )
-  return(row_muts)
+    return(row_muts)
+
 }
 
 compare_muts <- function(row_muts, all_muts) {
@@ -138,9 +131,9 @@ define_mut_presence_absence <- function(sampled_cells) {
   #find all mutations in sample
   all_muts <- isolate_muts(i = 1, mutations_vec = c(),
                            mutations_column = sampled_cells$mutations)
-  rowise_muts <- map(sampled_cells$mutations, get_row_muts)
+  rowise_muts <- purrr::map(sampled_cells$mutations, get_row_muts)
   
-  mut_presence_absence <- map(rowise_muts, ~compare_muts(.,all_muts)) %>% 
+  mut_presence_absence <- purrr::map(rowise_muts, ~compare_muts(.,all_muts)) %>% 
     do.call(rbind,.)
   
   return(mut_presence_absence)
@@ -158,7 +151,7 @@ cluster_cells <- function(sampled_cells, k = 5) {
 }
 
 set.seed(2018)
-CC_clustered_cells <- cluster_cells(CC_sampled_cells, k = 7)
+CC_clustered_cells <- cluster_cells(CC_sampled_cells, k = 10)
 
 
 plot_clustered_cells <- function(clustered_cells, model = "") {
@@ -179,7 +172,10 @@ plot_clustered_cells <- function(clustered_cells, model = "") {
   g
 }
 
-plot_clustered_cells(CC_clustered_cells)
+g <- plot_clustered_cells(CC_clustered_cells)
+
+ggsave("figures/spatial_sim/clustered_plot_2.png")
+
 
 
 #first normalize locations so that 0 is the center
@@ -195,7 +191,7 @@ plot_clustered_cells(CC_clustered_cells)
 final_sampled_cells <- CC_sampled_cells %>% 
   filter(sampled == TRUE)
 
-write.csv(final_sampled_cells, file = "outputs/CC_final_sampled_cells.csv")
+write.csv(final_sampled_cells, file = "outputs/CC_final_sampled_cells_2.csv")
 #define presence/absense of mutations and filter for sampled muts
 final_sampled_muts <- define_mut_presence_absence(CC_sampled_cells)[which(final_sampled_cells$sampled == TRUE),]
 
@@ -204,7 +200,7 @@ final_sampled_muts <- final_sampled_muts[, colSums(final_sampled_muts != 0) > 0]
 
 #write fasta file for sampled cells and mutations
 
-fasta_file <- "outputs/CC_sim.fa"
+fasta_file <- "outputs/CC_sim_2.fa"
 
 #start new file for first line
 write(c(paste0(">",
