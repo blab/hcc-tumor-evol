@@ -1,0 +1,1117 @@
+<?xml version="1.0" standalone="yes"?>
+<beast>
+	<taxa id="taxa">
+		<taxon id="26|-0.5|-2.5">
+			<attr name="x">
+				-0.5
+			</attr>
+			<attr name="y">
+				-2.5
+			</attr>
+			<attr name="location">
+				-0.5 -2.5
+			</attr>
+		</taxon>
+		<taxon id="38|-1.5|-2.5">
+			<attr name="x">
+				-1.5
+			</attr>
+			<attr name="y">
+				-2.5
+			</attr>
+			<attr name="location">
+				-1.5 -2.5
+			</attr>
+		</taxon>
+		<taxon id="116|-1.5|3.5">
+			<attr name="x">
+				-1.5
+			</attr>
+			<attr name="y">
+				3.5
+			</attr>
+			<attr name="location">
+				-1.5 3.5
+			</attr>
+		</taxon>
+		<taxon id="124|0.5|-1.5">
+			<attr name="x">
+				0.5
+			</attr>
+			<attr name="y">
+				-1.5
+			</attr>
+			<attr name="location">
+				0.5 -1.5
+			</attr>
+		</taxon>
+		<taxon id="156|-5.5|2.5">
+			<attr name="x">
+				-5.5
+			</attr>
+			<attr name="y">
+				2.5
+			</attr>
+			<attr name="location">
+				-5.5 2.5
+			</attr>
+		</taxon>
+		<taxon id="169|-4.5|-4.5">
+			<attr name="x">
+				-4.5
+			</attr>
+			<attr name="y">
+				-4.5
+			</attr>
+			<attr name="location">
+				-4.5 -4.5
+			</attr>
+		</taxon>
+		<taxon id="196|-4.5|1.5">
+			<attr name="x">
+				-4.5
+			</attr>
+			<attr name="y">
+				1.5
+			</attr>
+			<attr name="location">
+				-4.5 1.5
+			</attr>
+		</taxon>
+		<taxon id="206|3.5|-1.5">
+			<attr name="x">
+				3.5
+			</attr>
+			<attr name="y">
+				-1.5
+			</attr>
+			<attr name="location">
+				3.5 -1.5
+			</attr>
+		</taxon>
+		<taxon id="270|4.5|-1.5">
+			<attr name="x">
+				4.5
+			</attr>
+			<attr name="y">
+				-1.5
+			</attr>
+			<attr name="location">
+				4.5 -1.5
+			</attr>
+		</taxon>
+		<taxon id="296|-5.5|-5.5">
+			<attr name="x">
+				-5.5
+			</attr>
+			<attr name="y">
+				-5.5
+			</attr>
+			<attr name="location">
+				-5.5 -5.5
+			</attr>
+		</taxon>
+		<taxon id="298|1.5|-4.5">
+			<attr name="x">
+				1.5
+			</attr>
+			<attr name="y">
+				-4.5
+			</attr>
+			<attr name="location">
+				1.5 -4.5
+			</attr>
+		</taxon>
+		<taxon id="377|3.5|0.5">
+			<attr name="x">
+				3.5
+			</attr>
+			<attr name="y">
+				0.5
+			</attr>
+			<attr name="location">
+				3.5 0.5
+			</attr>
+		</taxon>
+		<taxon id="402|2.5|3.5">
+			<attr name="x">
+				2.5
+			</attr>
+			<attr name="y">
+				3.5
+			</attr>
+			<attr name="location">
+				2.5 3.5
+			</attr>
+		</taxon>
+		<taxon id="456|-2.5|7.5">
+			<attr name="x">
+				-2.5
+			</attr>
+			<attr name="y">
+				7.5
+			</attr>
+			<attr name="location">
+				-2.5 7.5
+			</attr>
+		</taxon>
+		<taxon id="515|-6.5|-9.5">
+			<attr name="x">
+				-6.5
+			</attr>
+			<attr name="y">
+				-9.5
+			</attr>
+			<attr name="location">
+				-6.5 -9.5
+			</attr>
+		</taxon>
+		<taxon id="614|8.5|-3.5">
+			<attr name="x">
+				8.5
+			</attr>
+			<attr name="y">
+				-3.5
+			</attr>
+			<attr name="location">
+				8.5 -3.5
+			</attr>
+		</taxon>
+		<taxon id="632|-4.5|8.5">
+			<attr name="x">
+				-4.5
+			</attr>
+			<attr name="y">
+				8.5
+			</attr>
+			<attr name="location">
+				-4.5 8.5
+			</attr>
+		</taxon>
+		<taxon id="794|-3.5|-10.5">
+			<attr name="x">
+				-3.5
+			</attr>
+			<attr name="y">
+				-10.5
+			</attr>
+			<attr name="location">
+				-3.5 -10.5
+			</attr>
+		</taxon>
+		<taxon id="828|-11.5|1.5">
+			<attr name="x">
+				-11.5
+			</attr>
+			<attr name="y">
+				1.5
+			</attr>
+			<attr name="location">
+				-11.5 1.5
+			</attr>
+		</taxon>
+		<taxon id="906|-4.5|-10.5">
+			<attr name="x">
+				-4.5
+			</attr>
+			<attr name="y">
+				-10.5
+			</attr>
+			<attr name="location">
+				-4.5 -10.5
+			</attr>
+		</taxon>
+		<taxon id="908|-4.5|11.5">
+			<attr name="x">
+				-4.5
+			</attr>
+			<attr name="y">
+				11.5
+			</attr>
+			<attr name="location">
+				-4.5 11.5
+			</attr>
+		</taxon>
+		<taxon id="943|-0.5|12.5">
+			<attr name="x">
+				-0.5
+			</attr>
+			<attr name="y">
+				12.5
+			</attr>
+			<attr name="location">
+				-0.5 12.5
+			</attr>
+		</taxon>
+		<taxon id="1108|4.5|10.5">
+			<attr name="x">
+				4.5
+			</attr>
+			<attr name="y">
+				10.5
+			</attr>
+			<attr name="location">
+				4.5 10.5
+			</attr>
+		</taxon>
+		<taxon id="1136|2.5|-12.5">
+			<attr name="x">
+				2.5
+			</attr>
+			<attr name="y">
+				-12.5
+			</attr>
+			<attr name="location">
+				2.5 -12.5
+			</attr>
+		</taxon>
+		<taxon id="1168|7.5|8.5">
+			<attr name="x">
+				7.5
+			</attr>
+			<attr name="y">
+				8.5
+			</attr>
+			<attr name="location">
+				7.5 8.5
+			</attr>
+		</taxon>
+		<taxon id="1196|0.5|14.5">
+			<attr name="x">
+				0.5
+			</attr>
+			<attr name="y">
+				14.5
+			</attr>
+			<attr name="location">
+				0.5 14.5
+			</attr>
+		</taxon>
+		<taxon id="1226|-11.5|5.5">
+			<attr name="x">
+				-11.5
+			</attr>
+			<attr name="y">
+				5.5
+			</attr>
+			<attr name="location">
+				-11.5 5.5
+			</attr>
+		</taxon>
+		<taxon id="1324|5.5|-12.5">
+			<attr name="x">
+				5.5
+			</attr>
+			<attr name="y">
+				-12.5
+			</attr>
+			<attr name="location">
+				5.5 -12.5
+			</attr>
+		</taxon>
+		<taxon id="1332|8.5|5.5">
+			<attr name="x">
+				8.5
+			</attr>
+			<attr name="y">
+				5.5
+			</attr>
+			<attr name="location">
+				8.5 5.5
+			</attr>
+		</taxon>
+		<taxon id="1352|7.5|6.5">
+			<attr name="x">
+				7.5
+			</attr>
+			<attr name="y">
+				6.5
+			</attr>
+			<attr name="location">
+				7.5 6.5
+			</attr>
+		</taxon>
+		<taxon id="1360|7.5|-10.5">
+			<attr name="x">
+				7.5
+			</attr>
+			<attr name="y">
+				-10.5
+			</attr>
+			<attr name="location">
+				7.5 -10.5
+			</attr>
+		</taxon>
+		<taxon id="1368|-14.5|0.5">
+			<attr name="x">
+				-14.5
+			</attr>
+			<attr name="y">
+				0.5
+			</attr>
+			<attr name="location">
+				-14.5 0.5
+			</attr>
+		</taxon>
+		<taxon id="1378|7.5|9.5">
+			<attr name="x">
+				7.5
+			</attr>
+			<attr name="y">
+				9.5
+			</attr>
+			<attr name="location">
+				7.5 9.5
+			</attr>
+		</taxon>
+		<taxon id="1423|9.5|4.5">
+			<attr name="x">
+				9.5
+			</attr>
+			<attr name="y">
+				4.5
+			</attr>
+			<attr name="location">
+				9.5 4.5
+			</attr>
+		</taxon>
+		<taxon id="1461|-15.5|-1.5">
+			<attr name="x">
+				-15.5
+			</attr>
+			<attr name="y">
+				-1.5
+			</attr>
+			<attr name="location">
+				-15.5 -1.5
+			</attr>
+		</taxon>
+		<taxon id="1514|-0.5|15.5">
+			<attr name="x">
+				-0.5
+			</attr>
+			<attr name="y">
+				15.5
+			</attr>
+			<attr name="location">
+				-0.5 15.5
+			</attr>
+		</taxon>
+		<taxon id="1645|12.5|-8.5">
+			<attr name="x">
+				12.5
+			</attr>
+			<attr name="y">
+				-8.5
+			</attr>
+			<attr name="location">
+				12.5 -8.5
+			</attr>
+		</taxon>
+		<taxon id="1665|-11.5|-12.5">
+			<attr name="x">
+				-11.5
+			</attr>
+			<attr name="y">
+				-12.5
+			</attr>
+			<attr name="location">
+				-11.5 -12.5
+			</attr>
+		</taxon>
+		<taxon id="1666|-10.5|-11.5">
+			<attr name="x">
+				-10.5
+			</attr>
+			<attr name="y">
+				-11.5
+			</attr>
+			<attr name="location">
+				-10.5 -11.5
+			</attr>
+		</taxon>
+		<taxon id="1676|-0.5|16.5">
+			<attr name="x">
+				-0.5
+			</attr>
+			<attr name="y">
+				16.5
+			</attr>
+			<attr name="location">
+				-0.5 16.5
+			</attr>
+		</taxon>
+		<taxon id="1679|14.5|1.5">
+			<attr name="x">
+				14.5
+			</attr>
+			<attr name="y">
+				1.5
+			</attr>
+			<attr name="location">
+				14.5 1.5
+			</attr>
+		</taxon>
+		<taxon id="1819|-16.5|9.5">
+			<attr name="x">
+				-16.5
+			</attr>
+			<attr name="y">
+				9.5
+			</attr>
+			<attr name="location">
+				-16.5 9.5
+			</attr>
+		</taxon>
+		<taxon id="1831|15.5|-0.5">
+			<attr name="x">
+				15.5
+			</attr>
+			<attr name="y">
+				-0.5
+			</attr>
+			<attr name="location">
+				15.5 -0.5
+			</attr>
+		</taxon>
+		<taxon id="1868|-14.5|-5.5">
+			<attr name="x">
+				-14.5
+			</attr>
+			<attr name="y">
+				-5.5
+			</attr>
+			<attr name="location">
+				-14.5 -5.5
+			</attr>
+		</taxon>
+		<taxon id="1915|-13.5|-8.5">
+			<attr name="x">
+				-13.5
+			</attr>
+			<attr name="y">
+				-8.5
+			</attr>
+			<attr name="location">
+				-13.5 -8.5
+			</attr>
+		</taxon>
+		<taxon id="1934|8.5|14.5">
+			<attr name="x">
+				8.5
+			</attr>
+			<attr name="y">
+				14.5
+			</attr>
+			<attr name="location">
+				8.5 14.5
+			</attr>
+		</taxon>
+		<taxon id="1940|15.5|2.5">
+			<attr name="x">
+				15.5
+			</attr>
+			<attr name="y">
+				2.5
+			</attr>
+			<attr name="location">
+				15.5 2.5
+			</attr>
+		</taxon>
+		<taxon id="1974|18.5|-2.5">
+			<attr name="x">
+				18.5
+			</attr>
+			<attr name="y">
+				-2.5
+			</attr>
+			<attr name="location">
+				18.5 -2.5
+			</attr>
+		</taxon>
+		<taxon id="1982|-9.5|-13.5">
+			<attr name="x">
+				-9.5
+			</attr>
+			<attr name="y">
+				-13.5
+			</attr>
+			<attr name="location">
+				-9.5 -13.5
+			</attr>
+		</taxon>
+		<taxon id="1994|-4.5|-18.5">
+			<attr name="x">
+				-4.5
+			</attr>
+			<attr name="y">
+				-18.5
+			</attr>
+			<attr name="location">
+				-4.5 -18.5
+			</attr>
+		</taxon>
+	</taxa>
+	<alignment id="alignment" dataType="binary">
+		<sequence>
+			<taxon idref="26|-0.5|-2.5"/>
+			0010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="38|-1.5|-2.5"/>
+			1000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="116|-1.5|3.5"/>
+			1100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="124|0.5|-1.5"/>
+			0010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="156|-5.5|2.5"/>
+			1100100100000001000000000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="169|-4.5|-4.5"/>
+			1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="196|-4.5|1.5"/>
+			1100100100000000000010000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="206|3.5|-1.5"/>
+			0010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="270|4.5|-1.5"/>
+			0010000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="296|-5.5|-5.5"/>
+			1000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="298|1.5|-4.5"/>
+			0010000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="377|3.5|0.5"/>
+			1101000000000110000000001000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="402|2.5|3.5"/>
+			1101000000000100100000000000001000100000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="456|-2.5|7.5"/>
+			1100000000000000000100000000000000000000100000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="515|-6.5|-9.5"/>
+			1000000000100000000000000000010000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="614|8.5|-3.5"/>
+			0010000000000000000000100010100000000000000000000001000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="632|-4.5|8.5"/>
+			1100000000000000000100000000000000000000000000000010000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="794|-3.5|-10.5"/>
+			1000000010000000000000000100000000000000000000000000100000001000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="828|-11.5|1.5"/>
+			1100100100000000000000000000000001000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="906|-4.5|-10.5"/>
+			1000000000000000001000000000000000000000000000000000000100000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="908|-4.5|11.5"/>
+			1100000000000000000100000000000000000000000000000010000010000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="943|-0.5|12.5"/>
+			1100000000011000000001000000000000000000000000000000000000000000000000001000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1108|4.5|10.5"/>
+			1100000000011000000001000000000000000000000000001000000000000000000000100000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1136|2.5|-12.5"/>
+			1000000000000000000000000000000010000000000000000000000000000000000100000000100000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1168|7.5|8.5"/>
+			1100000000011000000001000000000000000000000001000000000000000001000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1196|0.5|14.5"/>
+			1100000000011000000001000000000000000000000000000000000000000000000000010000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1226|-11.5|5.5"/>
+			1100010000000000000000000000000000000001000000000000000000100100000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1324|5.5|-12.5"/>
+			1000000000000000000000000000000000000000000000000000000001000000000000000000000001000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1332|8.5|5.5"/>
+			1100000000011000000001000000000100000000010000100000000000000000000000000000000010000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1352|7.5|6.5"/>
+			1100000000011000000001000000000100000000010000100000000000000000010000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1360|7.5|-10.5"/>
+			0010000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1368|-14.5|0.5"/>
+			1100100100000000000000000000000001000000000000000000000000000000000000000100000000010000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1378|7.5|9.5"/>
+			1100000000011000000001000000000000000000000001000000000000000000000000000000001000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1423|9.5|4.5"/>
+			0010000000000000000000100010100000000100000000000000010000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1461|-15.5|-1.5"/>
+			1100100100000000000000000000000001000000000000000000000000000000000000000000000000100000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1514|-0.5|15.5"/>
+			1100000000011000000001000000000000000000000000000000000000000000000000010000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1645|12.5|-8.5"/>
+			0010000001000000010000000001000000010000000010010000000000000000000000000000000000000100000000
+		</sequence>
+		<sequence>
+			<taxon idref="1665|-11.5|-12.5"/>
+			1000000000100000000000000000000000000010000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1666|-10.5|-11.5"/>
+			1000000000100000000000000000000000000010000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1676|-0.5|16.5"/>
+			1100000000011000000001000000000000000000000000000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1679|14.5|1.5"/>
+			0010000000000000000000100010100000000000001100000000000000000000000000000000000000000010000000
+		</sequence>
+		<sequence>
+			<taxon idref="1819|-16.5|9.5"/>
+			1100010000000000000000000000000000000001000000000000000000110000000000000000000000001000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1831|15.5|-0.5"/>
+			0010000000000000000000100010100000000000001100000000000000000000000000000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1868|-14.5|-5.5"/>
+			1000000000100000000000000000000000000000000000000100001000000000000010000000000100000000000010
+		</sequence>
+		<sequence>
+			<taxon idref="1915|-13.5|-8.5"/>
+			1000000000100000000000000000000000000000000000000100000000000000000001000000000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1934|8.5|14.5"/>
+			1100000000011000000001000000000000000000000000001000000000000000000000000000000000000000010000
+		</sequence>
+		<sequence>
+			<taxon idref="1940|15.5|2.5"/>
+			0010000000000000000000100010100000000100000000000000000000000000100000000000000000000000101000
+		</sequence>
+		<sequence>
+			<taxon idref="1974|18.5|-2.5"/>
+			0010000001000000010000000001000000010000000010010000000000000000000000000000010000000000000001
+		</sequence>
+		<sequence>
+			<taxon idref="1982|-9.5|-13.5"/>
+			1000000000100000000000000000010000001000000000000000000000000000000000000010000000000000000000
+		</sequence>
+		<sequence>
+			<taxon idref="1994|-4.5|-18.5"/>
+			1000000010000000000000000100000000000000000000000000100000001010001000000001000000000001000100
+		</sequence>
+	</alignment>
+	<!-- npatterns=35                                                            -->
+	<patterns id="patterns" from="1" unique="false">
+		<alignment idref="alignment"/>
+	</patterns>
+
+	<!-- A prior assumption that the population size has grown exponentially     -->
+	<!-- throughout the time spanned by the genealogy.                           -->
+	<exponentialGrowth id="exponential" units="years">
+		<populationSize>
+			<parameter id="exponential.popSize" value="1.0" lower="0.0"/>
+		</populationSize>
+		<growthRate>
+			<parameter id="exponential.growthRate" value="0.0"/>
+		</growthRate>
+	</exponentialGrowth>
+
+	<!-- Generate a random starting tree under the coalescent process            -->
+	<coalescentSimulator id="startingTree">
+		<taxa idref="taxa"/>
+		<exponentialGrowth idref="exponential"/>
+	</coalescentSimulator>
+
+	<!-- Generate a tree model                                                   -->
+	<treeModel id="treeModel">
+		<coalescentTree idref="startingTree"/>
+		<rootHeight>
+			<parameter id="treeModel.rootHeight"/>
+		</rootHeight>
+		<nodeHeights internalNodes="true">
+			<parameter id="treeModel.internalNodeHeights"/>
+		</nodeHeights>
+		<nodeHeights internalNodes="true" rootNode="true">
+			<parameter id="treeModel.allInternalNodeHeights"/>
+		</nodeHeights>
+	</treeModel>
+
+	<!-- Generate a coalescent likelihood                                        -->
+	<coalescentLikelihood id="coalescent">
+		<model>
+			<exponentialGrowth idref="exponential"/>
+		</model>
+		<populationTree>
+			<treeModel idref="treeModel"/>
+		</populationTree>
+	</coalescentLikelihood>
+
+	<!-- The strict clock (Uniform rates across branches)                        -->
+	<strictClockBranchRates id="branchRates">
+		<rate>
+			<parameter id="clock.rate" value="1.0"/>
+		</rate>
+	</strictClockBranchRates>
+	<rateStatistic id="meanRate" name="meanRate" mode="mean" internal="true" external="true">
+		<treeModel idref="treeModel"/>
+		<strictClockBranchRates idref="branchRates"/>
+	</rateStatistic>
+
+	<!-- The Binary simple model (based on the general substitution model)       -->
+	<binarySubstitutionModel id="bsimple">
+		<frequencies>
+			<frequencyModel dataType="binary">
+				<frequencies>
+					<parameter id="frequencies" value="0.5 0.5"/>
+				</frequencies>
+			</frequencyModel>
+		</frequencies>
+	</binarySubstitutionModel>
+
+	<!-- site model                                                              -->
+	<siteModel id="siteModel">
+		<substitutionModel>
+			<binarySubstitutionModel idref="bsimple"/>
+		</substitutionModel>
+		<relativeRate>
+			<parameter id="mu" value="1.0" lower="0.0"/>
+		</relativeRate>
+	</siteModel>
+
+	<!-- START Multivariate diffusion model                                      -->
+
+	<multivariateDiffusionModel id="location.diffusionModel">
+		<precisionMatrix>
+			<matrixParameter id="location.precision">
+				<parameter id="location.precision.col1" value="0.05 0.002"/>
+				<parameter id="location.precision.col2" value="0.002 0.05"/>
+			</matrixParameter>
+		</precisionMatrix>
+	</multivariateDiffusionModel>
+
+	<multivariateWishartPrior id="location.precisionPrior" df="2">
+		<scaleMatrix>
+			<matrixParameter>
+				<parameter value="1.0 0.0"/>
+				<parameter value="0.0 1.0"/>
+			</matrixParameter>
+		</scaleMatrix>
+		<data>
+			<parameter idref="location.precision"/>
+		</data>
+	</multivariateWishartPrior>
+
+	<!-- END Multivariate diffusion model                                        -->
+
+
+	<!-- Likelihood for tree given sequence data                                 -->
+	<ancestralTreeLikelihood id="treeLikelihood" useAmbiguities="false" stateTagName="states">
+		<patterns idref="patterns"/>
+		<treeModel idref="treeModel"/>
+		<siteModel idref="siteModel"/>
+		<strictClockBranchRates idref="branchRates"/>
+	</ancestralTreeLikelihood>
+
+	<!-- START Multivariate diffusion model                                      -->
+	<discretizedBranchRates id="location.diffusionRates">
+		<treeModel idref="treeModel"/>
+		<distribution>
+			<onePGammaDistributionModel>
+				<shape>
+
+					<!-- half DF                                                                 -->
+					<parameter id="location.halfDF" value="0.5"/>
+				</shape>
+			</onePGammaDistributionModel>
+		</distribution>
+		<rateCategories>
+			<parameter id="location.rrwCategories"/>
+		</rateCategories>
+	</discretizedBranchRates>
+
+	<multivariateTraitLikelihood id="location.traitLikelihood" traitName="location" useTreeLength="true" scaleByTime="true" reportAsMultivariate="true" reciprocalRates="true" integrateInternalTraits="true">
+		<multivariateDiffusionModel idref="location.diffusionModel"/>
+		<treeModel idref="treeModel"/>
+		<traitParameter>
+			<parameter id="leaf.location"/>
+		</traitParameter>
+		<conjugateRootPrior>
+			<meanParameter>
+				<parameter value="0.0 0.0"/>
+			</meanParameter>
+			<priorSampleSize>
+				<parameter value="0.001"/>
+			</priorSampleSize>
+		</conjugateRootPrior>
+		<discretizedBranchRates idref="location.diffusionRates"/>
+	</multivariateTraitLikelihood>
+	<correlation id="location.correlation" dimension1="1" dimension2="2">
+		<matrixParameter idref="location.precision"/>
+	</correlation>
+	<matrixInverse id="location.varCovar">
+		<matrixParameter idref="location.precision"/>
+	</matrixInverse>
+	<continuousDiffusionStatistic id="location.diffusionRate" greatCircleDistance="true">
+		<multivariateTraitLikelihood idref="location.traitLikelihood"/>
+	</continuousDiffusionStatistic>
+
+	<!-- END Multivariate diffusion model                                        -->
+
+
+	<!-- Define operators                                                        -->
+	<operators id="operators" optimizationSchedule="log">
+		<deltaExchange delta="0.01" weight="1">
+			<parameter idref="frequencies"/>
+		</deltaExchange>
+		<subtreeSlide size="1.0" gaussian="true" weight="15">
+			<treeModel idref="treeModel"/>
+		</subtreeSlide>
+		<narrowExchange weight="15">
+			<treeModel idref="treeModel"/>
+		</narrowExchange>
+		<wideExchange weight="3">
+			<treeModel idref="treeModel"/>
+		</wideExchange>
+		<wilsonBalding weight="3">
+			<treeModel idref="treeModel"/>
+		</wilsonBalding>
+		<scaleOperator scaleFactor="0.75" weight="3">
+			<parameter idref="treeModel.rootHeight"/>
+		</scaleOperator>
+		<uniformOperator weight="30">
+			<parameter idref="treeModel.internalNodeHeights"/>
+		</uniformOperator>
+		<scaleOperator scaleFactor="0.75" weight="3">
+			<parameter idref="exponential.popSize"/>
+		</scaleOperator>
+		<randomWalkOperator windowSize="1.0" weight="3">
+			<parameter idref="exponential.growthRate"/>
+		</randomWalkOperator>
+		<scaleOperator scaleFactor="0.75" weight="1">
+			<parameter idref="location.halfDF"/>
+		</scaleOperator>
+		<swapOperator size="1" weight="30" autoOptimize="false">
+			<parameter idref="location.rrwCategories"/>
+		</swapOperator>
+		<uniformIntegerOperator weight="10">
+			<parameter idref="location.rrwCategories"/>
+		</uniformIntegerOperator>
+
+		<!-- START Multivariate diffusion model                                      -->
+		<precisionGibbsOperator weight="2">
+			<multivariateTraitLikelihood idref="location.traitLikelihood"/>
+			<multivariateWishartPrior idref="location.precisionPrior"/>
+		</precisionGibbsOperator>
+
+		<!-- END Multivariate diffusion model                                        -->
+
+	</operators>
+
+	<!-- Define MCMC                                                             -->
+	<mcmc id="mcmc" chainLength="100000000" autoOptimize="true" operatorAnalysis="CC_sim_test.ops">
+		<posterior id="posterior">
+			<prior id="prior">
+				<uniformPrior lower="0.0" upper="1.0">
+					<parameter idref="frequencies"/>
+				</uniformPrior>
+				<oneOnXPrior>
+					<parameter idref="exponential.popSize"/>
+				</oneOnXPrior>
+				<laplacePrior mean="0.0" scale="1.0">
+					<parameter idref="exponential.growthRate"/>
+				</laplacePrior>
+				<gammaPrior shape="0.001" scale="1000.0" offset="0.0">
+					<parameter idref="location.halfDF"/>
+				</gammaPrior>
+				<coalescentLikelihood idref="coalescent"/>
+				<strictClockBranchRates idref="branchRates"/>
+
+				<!-- START Multivariate diffusion model                                      -->
+				<multivariateWishartPrior idref="location.precisionPrior"/>
+
+				<!-- END Multivariate diffusion model                                        -->
+
+			</prior>
+			<likelihood id="likelihood">
+				<ancestralTreeLikelihood idref="treeLikelihood"/>
+
+				<!-- START Multivariate diffusion model                                      -->
+				<multivariateTraitLikelihood idref="location.traitLikelihood"/>
+
+				<!-- END Multivariate diffusion model                                        -->
+
+			</likelihood>
+		</posterior>
+		<operators idref="operators"/>
+
+		<!-- write log to screen                                                     -->
+		<log id="screenLog" logEvery="10000">
+			<column label="Posterior" dp="4" width="12">
+				<posterior idref="posterior"/>
+			</column>
+			<column label="Prior" dp="4" width="12">
+				<prior idref="prior"/>
+			</column>
+			<column label="Likelihood" dp="4" width="12">
+				<likelihood idref="likelihood"/>
+			</column>
+			<column label="rootHeight" sf="6" width="12">
+				<parameter idref="treeModel.rootHeight"/>
+			</column>
+		</log>
+
+		<!-- write log to file                                                       -->
+		<log id="fileLog" logEvery="10000" fileName="CC_sim_test.log" overwrite="false">
+			<posterior idref="posterior"/>
+			<prior idref="prior"/>
+			<likelihood idref="likelihood"/>
+			<parameter idref="treeModel.rootHeight"/>
+			<parameter idref="exponential.popSize"/>
+			<parameter idref="exponential.growthRate"/>
+			<parameter idref="clock.rate"/>
+			<rateStatistic idref="meanRate"/>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<matrixParameter idref="location.precision"/>
+			<correlation idref="location.correlation"/>
+			<matrixInverse idref="location.varCovar"/>
+			<continuousDiffusionStatistic idref="location.diffusionRate"/>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+			<ancestralTreeLikelihood idref="treeLikelihood"/>
+			<strictClockBranchRates idref="branchRates"/>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<multivariateTraitLikelihood idref="location.traitLikelihood"/>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+			<coalescentLikelihood idref="coalescent"/>
+		</log>
+
+		<!-- write tree log to file                                                  -->
+		<logTree id="treeFileLog" logEvery="10000" nexusFormat="true" fileName="CC_sim_test.trees" sortTranslationTable="true">
+			<treeModel idref="treeModel"/>
+			<trait name="rate" tag="rate">
+				<strictClockBranchRates idref="branchRates"/>
+			</trait>
+			<posterior idref="posterior"/>
+
+			<!-- START Ancestral state reconstruction                                    -->
+			<trait name="states" tag="alleles_fasta_meta">
+				<ancestralTreeLikelihood idref="treeLikelihood"/>
+			</trait>
+			<trait name="location" tag="location">
+				<multivariateTraitLikelihood idref="location.traitLikelihood"/>
+			</trait>
+
+			<!-- END Ancestral state reconstruction                                      -->
+
+
+			<!-- START Multivariate diffusion model                                      -->
+			<multivariateDiffusionModel idref="location.diffusionModel"/>
+			<multivariateTraitLikelihood idref="location.traitLikelihood"/>
+			<trait name="rate" tag="location.rate">
+				<discretizedBranchRates idref="location.diffusionRates"/>
+			</trait>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</logTree>
+	</mcmc>
+
+	<!-- START Marginal Likelihood Estimator                                     -->
+
+	<!-- Define marginal likelihood estimator (PS/SS) settings                   -->
+	<marginalLikelihoodEstimator chainLength="1000000" pathSteps="100" pathScheme="betaquantile" alpha="0.3">
+		<samplers>
+			<mcmc idref="mcmc"/>
+		</samplers>
+		<pathLikelihood id="pathLikelihood">
+			<source>
+				<posterior idref="posterior"/>
+			</source>
+			<destination>
+				<prior idref="prior"/>
+			</destination>
+		</pathLikelihood>
+		<log id="MLELog" logEvery="1000" fileName="CC_sim_test.mle.log">
+			<pathLikelihood idref="pathLikelihood"/>
+		</log>
+	</marginalLikelihoodEstimator>
+
+	<!-- Path sampling estimator from collected samples                          -->
+	<pathSamplingAnalysis fileName="CC_sim_test.mle.log">
+		<likelihoodColumn name="pathLikelihood.delta"/>
+		<thetaColumn name="pathLikelihood.theta"/>
+	</pathSamplingAnalysis>
+
+	<!-- Stepping-stone sampling estimator from collected samples                -->
+	<steppingStoneSamplingAnalysis fileName="CC_sim_test.mle.log">
+		<likelihoodColumn name="pathLikelihood.delta"/>
+		<thetaColumn name="pathLikelihood.theta"/>
+	</steppingStoneSamplingAnalysis>
+
+	<!-- END Marginal Likelihood Estimator                                       -->
+
+	<report>
+		<property name="timer">
+			<mcmc idref="mcmc"/>
+		</property>
+	</report>
+</beast>

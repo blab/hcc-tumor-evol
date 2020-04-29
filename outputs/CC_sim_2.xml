@@ -12,951 +12,951 @@
 	<!-- The list of taxa to be analysed (can also include dates/ages).          -->
 	<!-- ntax=50                                                                 -->
 	<taxa id="taxa">
-		<taxon id="17|-3|-0.5">
+		<taxon id="85|-1.5|4">
 			<attr name="X_coord">
-				-3
-			</attr>
-			<attr name="Y_coord">
-				-0.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-3
-			</attr>
-			<attr name="Y_coord">
-				-0.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="28|0|2.5">
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				2.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				2.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="48|3|-2.5">
-			<attr name="X_coord">
-				3
-			</attr>
-			<attr name="Y_coord">
-				-2.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				3
-			</attr>
-			<attr name="Y_coord">
-				-2.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="49|1|5.5">
-			<attr name="X_coord">
-				1
-			</attr>
-			<attr name="Y_coord">
-				5.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				1
-			</attr>
-			<attr name="Y_coord">
-				5.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="76|0|-4.5">
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				-4.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				-4.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="101|1|3.5">
-			<attr name="X_coord">
-				1
-			</attr>
-			<attr name="Y_coord">
-				3.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				1
-			</attr>
-			<attr name="Y_coord">
-				3.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="110|2|1.5">
-			<attr name="X_coord">
-				2
-			</attr>
-			<attr name="Y_coord">
-				1.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				2
-			</attr>
-			<attr name="Y_coord">
-				1.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="115|3|3.5">
-			<attr name="X_coord">
-				3
-			</attr>
-			<attr name="Y_coord">
-				3.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				3
-			</attr>
-			<attr name="Y_coord">
-				3.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="119|3|6.5">
-			<attr name="X_coord">
-				3
-			</attr>
-			<attr name="Y_coord">
-				6.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				3
-			</attr>
-			<attr name="Y_coord">
-				6.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="178|-9|1.5">
-			<attr name="X_coord">
-				-9
-			</attr>
-			<attr name="Y_coord">
-				1.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-9
-			</attr>
-			<attr name="Y_coord">
-				1.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="190|-3|-4.5">
-			<attr name="X_coord">
-				-3
-			</attr>
-			<attr name="Y_coord">
-				-4.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-3
-			</attr>
-			<attr name="Y_coord">
-				-4.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="255|2|-8.5">
-			<attr name="X_coord">
-				2
-			</attr>
-			<attr name="Y_coord">
-				-8.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				2
-			</attr>
-			<attr name="Y_coord">
-				-8.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="265|0|9.5">
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				9.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				9.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="267|0|10.5">
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				10.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				10.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="368|-5|-6.5">
-			<attr name="X_coord">
-				-5
-			</attr>
-			<attr name="Y_coord">
-				-6.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-5
-			</attr>
-			<attr name="Y_coord">
-				-6.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="410|5|-9.5">
-			<attr name="X_coord">
-				5
-			</attr>
-			<attr name="Y_coord">
-				-9.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				5
-			</attr>
-			<attr name="Y_coord">
-				-9.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="447|7|-4.5">
-			<attr name="X_coord">
-				7
-			</attr>
-			<attr name="Y_coord">
-				-4.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				7
-			</attr>
-			<attr name="Y_coord">
-				-4.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="468|0|13.5">
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				13.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				13.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="495|-12|-4.5">
-			<attr name="X_coord">
-				-12
-			</attr>
-			<attr name="Y_coord">
-				-4.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-12
-			</attr>
-			<attr name="Y_coord">
-				-4.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="535|-13|6.5">
-			<attr name="X_coord">
-				-13
-			</attr>
-			<attr name="Y_coord">
-				6.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-13
-			</attr>
-			<attr name="Y_coord">
-				6.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="573|12|-1.5">
-			<attr name="X_coord">
-				12
-			</attr>
-			<attr name="Y_coord">
 				-1.5
 			</attr>
+			<attr name="Y_coord">
+				4
+			</attr>
 
 			<!-- START Multivariate diffusion model                                      -->
 			<attr name="X_coord">
-				12
-			</attr>
-			<attr name="Y_coord">
 				-1.5
 			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="596|-12|-7.5">
-			<attr name="X_coord">
-				-12
-			</attr>
 			<attr name="Y_coord">
-				-7.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-12
-			</attr>
-			<attr name="Y_coord">
-				-7.5
+				4
 			</attr>
 
 			<!-- END Multivariate diffusion model                                        -->
 
 		</taxon>
-		<taxon id="605|11|10.5">
+		<taxon id="86|-1.5|3">
 			<attr name="X_coord">
-				11
+				-1.5
 			</attr>
 			<attr name="Y_coord">
-				10.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				11
-			</attr>
-			<attr name="Y_coord">
-				10.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="630|0|-11.5">
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				-11.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				0
-			</attr>
-			<attr name="Y_coord">
-				-11.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="633|-3|6.5">
-			<attr name="X_coord">
-				-3
-			</attr>
-			<attr name="Y_coord">
-				6.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-3
-			</attr>
-			<attr name="Y_coord">
-				6.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="649|-9|-10.5">
-			<attr name="X_coord">
-				-9
-			</attr>
-			<attr name="Y_coord">
-				-10.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-9
-			</attr>
-			<attr name="Y_coord">
-				-10.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="684|9|-10.5">
-			<attr name="X_coord">
-				9
-			</attr>
-			<attr name="Y_coord">
-				-10.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				9
-			</attr>
-			<attr name="Y_coord">
-				-10.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="699|-3|-11.5">
-			<attr name="X_coord">
-				-3
-			</attr>
-			<attr name="Y_coord">
-				-11.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-3
-			</attr>
-			<attr name="Y_coord">
-				-11.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="737|-16|-5.5">
-			<attr name="X_coord">
-				-16
-			</attr>
-			<attr name="Y_coord">
-				-5.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-16
-			</attr>
-			<attr name="Y_coord">
-				-5.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="760|-15|1.5">
-			<attr name="X_coord">
-				-15
-			</attr>
-			<attr name="Y_coord">
-				1.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-15
-			</attr>
-			<attr name="Y_coord">
-				1.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="781|-14|-7.5">
-			<attr name="X_coord">
-				-14
-			</attr>
-			<attr name="Y_coord">
-				-7.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-14
-			</attr>
-			<attr name="Y_coord">
-				-7.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="789|5|15.5">
-			<attr name="X_coord">
-				5
-			</attr>
-			<attr name="Y_coord">
-				15.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				5
-			</attr>
-			<attr name="Y_coord">
-				15.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="819|-15|2.5">
-			<attr name="X_coord">
-				-15
-			</attr>
-			<attr name="Y_coord">
-				2.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-15
-			</attr>
-			<attr name="Y_coord">
-				2.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="832|14|8.5">
-			<attr name="X_coord">
-				14
-			</attr>
-			<attr name="Y_coord">
-				8.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				14
-			</attr>
-			<attr name="Y_coord">
-				8.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="872|-15|9.5">
-			<attr name="X_coord">
-				-15
-			</attr>
-			<attr name="Y_coord">
-				9.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-15
-			</attr>
-			<attr name="Y_coord">
-				9.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="880|-9|-11.5">
-			<attr name="X_coord">
-				-9
-			</attr>
-			<attr name="Y_coord">
-				-11.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-9
-			</attr>
-			<attr name="Y_coord">
-				-11.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="884|-16|9.5">
-			<attr name="X_coord">
-				-16
-			</attr>
-			<attr name="Y_coord">
-				9.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-16
-			</attr>
-			<attr name="Y_coord">
-				9.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="925|-7|-13.5">
-			<attr name="X_coord">
-				-7
-			</attr>
-			<attr name="Y_coord">
-				-13.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-7
-			</attr>
-			<attr name="Y_coord">
-				-13.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="926|-15|-2.5">
-			<attr name="X_coord">
-				-15
-			</attr>
-			<attr name="Y_coord">
-				-2.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-15
-			</attr>
-			<attr name="Y_coord">
-				-2.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="948|14|-6.5">
-			<attr name="X_coord">
-				14
-			</attr>
-			<attr name="Y_coord">
-				-6.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				14
-			</attr>
-			<attr name="Y_coord">
-				-6.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="950|-14|-11.5">
-			<attr name="X_coord">
-				-14
-			</attr>
-			<attr name="Y_coord">
-				-11.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-14
-			</attr>
-			<attr name="Y_coord">
-				-11.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="956|14|2.5">
-			<attr name="X_coord">
-				14
-			</attr>
-			<attr name="Y_coord">
-				2.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				14
-			</attr>
-			<attr name="Y_coord">
-				2.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="973|12|13.5">
-			<attr name="X_coord">
-				12
-			</attr>
-			<attr name="Y_coord">
-				13.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				12
-			</attr>
-			<attr name="Y_coord">
-				13.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="977|-15|-11.5">
-			<attr name="X_coord">
-				-15
-			</attr>
-			<attr name="Y_coord">
-				-11.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				-15
-			</attr>
-			<attr name="Y_coord">
-				-11.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="1020|13|-9.5">
-			<attr name="X_coord">
-				13
-			</attr>
-			<attr name="Y_coord">
-				-9.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				13
-			</attr>
-			<attr name="Y_coord">
-				-9.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="1024|9|-16.5">
-			<attr name="X_coord">
-				9
-			</attr>
-			<attr name="Y_coord">
-				-16.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				9
-			</attr>
-			<attr name="Y_coord">
-				-16.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="1031|15|0.5">
-			<attr name="X_coord">
-				15
-			</attr>
-			<attr name="Y_coord">
-				0.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				15
-			</attr>
-			<attr name="Y_coord">
-				0.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="1039|16|3.5">
-			<attr name="X_coord">
-				16
-			</attr>
-			<attr name="Y_coord">
-				3.5
-			</attr>
-
-			<!-- START Multivariate diffusion model                                      -->
-			<attr name="X_coord">
-				16
-			</attr>
-			<attr name="Y_coord">
-				3.5
-			</attr>
-
-			<!-- END Multivariate diffusion model                                        -->
-
-		</taxon>
-		<taxon id="1084|3|-17.5">
-			<attr name="X_coord">
 				3
 			</attr>
-			<attr name="Y_coord">
-				-17.5
-			</attr>
 
 			<!-- START Multivariate diffusion model                                      -->
 			<attr name="X_coord">
-				3
+				-1.5
 			</attr>
 			<attr name="Y_coord">
-				-17.5
+				3
 			</attr>
 
 			<!-- END Multivariate diffusion model                                        -->
 
 		</taxon>
-		<taxon id="1090|9|-17.5">
+		<taxon id="108|-2.5|1">
 			<attr name="X_coord">
-				9
+				-2.5
 			</attr>
 			<attr name="Y_coord">
-				-17.5
+				1
 			</attr>
 
 			<!-- START Multivariate diffusion model                                      -->
 			<attr name="X_coord">
-				9
+				-2.5
 			</attr>
 			<attr name="Y_coord">
-				-17.5
+				1
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="120|-0.5|-3">
+			<attr name="X_coord">
+				-0.5
+			</attr>
+			<attr name="Y_coord">
+				-3
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-0.5
+			</attr>
+			<attr name="Y_coord">
+				-3
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="126|3.5|-1">
+			<attr name="X_coord">
+				3.5
+			</attr>
+			<attr name="Y_coord">
+				-1
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				3.5
+			</attr>
+			<attr name="Y_coord">
+				-1
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="268|0.5|-5">
+			<attr name="X_coord">
+				0.5
+			</attr>
+			<attr name="Y_coord">
+				-5
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				0.5
+			</attr>
+			<attr name="Y_coord">
+				-5
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="352|-3.5|4">
+			<attr name="X_coord">
+				-3.5
+			</attr>
+			<attr name="Y_coord">
+				4
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-3.5
+			</attr>
+			<attr name="Y_coord">
+				4
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="382|5.5|0">
+			<attr name="X_coord">
+				5.5
+			</attr>
+			<attr name="Y_coord">
+				0
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				5.5
+			</attr>
+			<attr name="Y_coord">
+				0
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="404|-6.5|2">
+			<attr name="X_coord">
+				-6.5
+			</attr>
+			<attr name="Y_coord">
+				2
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-6.5
+			</attr>
+			<attr name="Y_coord">
+				2
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="448|6.5|2">
+			<attr name="X_coord">
+				6.5
+			</attr>
+			<attr name="Y_coord">
+				2
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				6.5
+			</attr>
+			<attr name="Y_coord">
+				2
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="474|3.5|-5">
+			<attr name="X_coord">
+				3.5
+			</attr>
+			<attr name="Y_coord">
+				-5
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				3.5
+			</attr>
+			<attr name="Y_coord">
+				-5
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="525|2.5|-7">
+			<attr name="X_coord">
+				2.5
+			</attr>
+			<attr name="Y_coord">
+				-7
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				2.5
+			</attr>
+			<attr name="Y_coord">
+				-7
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="531|-4.5|-8">
+			<attr name="X_coord">
+				-4.5
+			</attr>
+			<attr name="Y_coord">
+				-8
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-4.5
+			</attr>
+			<attr name="Y_coord">
+				-8
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="742|-3.5|11">
+			<attr name="X_coord">
+				-3.5
+			</attr>
+			<attr name="Y_coord">
+				11
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-3.5
+			</attr>
+			<attr name="Y_coord">
+				11
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="744|7.5|-6">
+			<attr name="X_coord">
+				7.5
+			</attr>
+			<attr name="Y_coord">
+				-6
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				7.5
+			</attr>
+			<attr name="Y_coord">
+				-6
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="880|-3.5|9">
+			<attr name="X_coord">
+				-3.5
+			</attr>
+			<attr name="Y_coord">
+				9
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-3.5
+			</attr>
+			<attr name="Y_coord">
+				9
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="925|-8.5|7">
+			<attr name="X_coord">
+				-8.5
+			</attr>
+			<attr name="Y_coord">
+				7
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-8.5
+			</attr>
+			<attr name="Y_coord">
+				7
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="982|2.5|12">
+			<attr name="X_coord">
+				2.5
+			</attr>
+			<attr name="Y_coord">
+				12
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				2.5
+			</attr>
+			<attr name="Y_coord">
+				12
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1053|9.5|6">
+			<attr name="X_coord">
+				9.5
+			</attr>
+			<attr name="Y_coord">
+				6
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				9.5
+			</attr>
+			<attr name="Y_coord">
+				6
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1054|8.5|5">
+			<attr name="X_coord">
+				8.5
+			</attr>
+			<attr name="Y_coord">
+				5
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				8.5
+			</attr>
+			<attr name="Y_coord">
+				5
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1182|-11.5|4">
+			<attr name="X_coord">
+				-11.5
+			</attr>
+			<attr name="Y_coord">
+				4
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-11.5
+			</attr>
+			<attr name="Y_coord">
+				4
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1185|-12.5|2">
+			<attr name="X_coord">
+				-12.5
+			</attr>
+			<attr name="Y_coord">
+				2
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-12.5
+			</attr>
+			<attr name="Y_coord">
+				2
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1200|10.5|-8">
+			<attr name="X_coord">
+				10.5
+			</attr>
+			<attr name="Y_coord">
+				-8
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				10.5
+			</attr>
+			<attr name="Y_coord">
+				-8
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1257|-8.5|14">
+			<attr name="X_coord">
+				-8.5
+			</attr>
+			<attr name="Y_coord">
+				14
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-8.5
+			</attr>
+			<attr name="Y_coord">
+				14
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1286|-5.5|13">
+			<attr name="X_coord">
+				-5.5
+			</attr>
+			<attr name="Y_coord">
+				13
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-5.5
+			</attr>
+			<attr name="Y_coord">
+				13
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1321|5.5|-11">
+			<attr name="X_coord">
+				5.5
+			</attr>
+			<attr name="Y_coord">
+				-11
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				5.5
+			</attr>
+			<attr name="Y_coord">
+				-11
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1359|-12.5|6">
+			<attr name="X_coord">
+				-12.5
+			</attr>
+			<attr name="Y_coord">
+				6
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-12.5
+			</attr>
+			<attr name="Y_coord">
+				6
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1364|5.5|11">
+			<attr name="X_coord">
+				5.5
+			</attr>
+			<attr name="Y_coord">
+				11
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				5.5
+			</attr>
+			<attr name="Y_coord">
+				11
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1366|-12.5|4">
+			<attr name="X_coord">
+				-12.5
+			</attr>
+			<attr name="Y_coord">
+				4
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-12.5
+			</attr>
+			<attr name="Y_coord">
+				4
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1390|13.5|-1">
+			<attr name="X_coord">
+				13.5
+			</attr>
+			<attr name="Y_coord">
+				-1
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				13.5
+			</attr>
+			<attr name="Y_coord">
+				-1
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1470|-14.5|-8">
+			<attr name="X_coord">
+				-14.5
+			</attr>
+			<attr name="Y_coord">
+				-8
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-14.5
+			</attr>
+			<attr name="Y_coord">
+				-8
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1475|-13.5|-7">
+			<attr name="X_coord">
+				-13.5
+			</attr>
+			<attr name="Y_coord">
+				-7
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-13.5
+			</attr>
+			<attr name="Y_coord">
+				-7
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1515|-7.5|16">
+			<attr name="X_coord">
+				-7.5
+			</attr>
+			<attr name="Y_coord">
+				16
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-7.5
+			</attr>
+			<attr name="Y_coord">
+				16
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1636|-14.5|-1">
+			<attr name="X_coord">
+				-14.5
+			</attr>
+			<attr name="Y_coord">
+				-1
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-14.5
+			</attr>
+			<attr name="Y_coord">
+				-1
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1672|-11.5|-13">
+			<attr name="X_coord">
+				-11.5
+			</attr>
+			<attr name="Y_coord">
+				-13
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-11.5
+			</attr>
+			<attr name="Y_coord">
+				-13
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1775|9.5|-12">
+			<attr name="X_coord">
+				9.5
+			</attr>
+			<attr name="Y_coord">
+				-12
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				9.5
+			</attr>
+			<attr name="Y_coord">
+				-12
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1795|5.5|18">
+			<attr name="X_coord">
+				5.5
+			</attr>
+			<attr name="Y_coord">
+				18
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				5.5
+			</attr>
+			<attr name="Y_coord">
+				18
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1797|7.5|-14">
+			<attr name="X_coord">
+				7.5
+			</attr>
+			<attr name="Y_coord">
+				-14
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				7.5
+			</attr>
+			<attr name="Y_coord">
+				-14
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1798|6.5|-13">
+			<attr name="X_coord">
+				6.5
+			</attr>
+			<attr name="Y_coord">
+				-13
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				6.5
+			</attr>
+			<attr name="Y_coord">
+				-13
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1829|-11.5|-15">
+			<attr name="X_coord">
+				-11.5
+			</attr>
+			<attr name="Y_coord">
+				-15
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-11.5
+			</attr>
+			<attr name="Y_coord">
+				-15
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1861|-13.5|-12">
+			<attr name="X_coord">
+				-13.5
+			</attr>
+			<attr name="Y_coord">
+				-12
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-13.5
+			</attr>
+			<attr name="Y_coord">
+				-12
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1862|-12.5|-11">
+			<attr name="X_coord">
+				-12.5
+			</attr>
+			<attr name="Y_coord">
+				-11
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-12.5
+			</attr>
+			<attr name="Y_coord">
+				-11
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1865|-5.5|-17">
+			<attr name="X_coord">
+				-5.5
+			</attr>
+			<attr name="Y_coord">
+				-17
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-5.5
+			</attr>
+			<attr name="Y_coord">
+				-17
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1912|-11.5|-14">
+			<attr name="X_coord">
+				-11.5
+			</attr>
+			<attr name="Y_coord">
+				-14
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-11.5
+			</attr>
+			<attr name="Y_coord">
+				-14
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1913|0.5|-19">
+			<attr name="X_coord">
+				0.5
+			</attr>
+			<attr name="Y_coord">
+				-19
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				0.5
+			</attr>
+			<attr name="Y_coord">
+				-19
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1927|16.5|-3">
+			<attr name="X_coord">
+				16.5
+			</attr>
+			<attr name="Y_coord">
+				-3
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				16.5
+			</attr>
+			<attr name="Y_coord">
+				-3
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1934|-14.5|3">
+			<attr name="X_coord">
+				-14.5
+			</attr>
+			<attr name="Y_coord">
+				3
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-14.5
+			</attr>
+			<attr name="Y_coord">
+				3
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1995|-15.5|-12">
+			<attr name="X_coord">
+				-15.5
+			</attr>
+			<attr name="Y_coord">
+				-12
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-15.5
+			</attr>
+			<attr name="Y_coord">
+				-12
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="1998|-7.5|16">
+			<attr name="X_coord">
+				-7.5
+			</attr>
+			<attr name="Y_coord">
+				16
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				-7.5
+			</attr>
+			<attr name="Y_coord">
+				16
+			</attr>
+
+			<!-- END Multivariate diffusion model                                        -->
+
+		</taxon>
+		<taxon id="2002|16.5|-11">
+			<attr name="X_coord">
+				16.5
+			</attr>
+			<attr name="Y_coord">
+				-11
+			</attr>
+
+			<!-- START Multivariate diffusion model                                      -->
+			<attr name="X_coord">
+				16.5
+			</attr>
+			<attr name="Y_coord">
+				-11
 			</attr>
 
 			<!-- END Multivariate diffusion model                                        -->
@@ -967,214 +967,214 @@
 	
 
 	<!-- The sequence alignment (each sequence refers to a taxon above).         -->
-	<!-- ntax=50 nchar=29                                                        -->
+	<!-- ntax=50 nchar=24                                                        -->
 	<alignment id="alignment" dataType="binary">
 		<sequence>
-			<taxon idref="17|-3|-0.5"/>
-			01000000000000000000000000000
+			<taxon idref="85|-1.5|4"/>
+			100000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="28|0|2.5"/>
-			10000000000000000000000000000
+			<taxon idref="86|-1.5|3"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="48|3|-2.5"/>
-			00100000001000000000000000000
+			<taxon idref="108|-2.5|1"/>
+			001000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="49|1|5.5"/>
-			10000010000000000000000000000
+			<taxon idref="120|-0.5|-3"/>
+			000001000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="76|0|-4.5"/>
-			01000000000000000000000000000
+			<taxon idref="126|3.5|-1"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="101|1|3.5"/>
-			00000000000001000000000000000
+			<taxon idref="268|0.5|-5"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="110|2|1.5"/>
-			00100100000000100000000000000
+			<taxon idref="352|-3.5|4"/>
+			110000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="115|3|3.5"/>
-			00010000000000000000000000000
+			<taxon idref="382|5.5|0"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="119|3|6.5"/>
-			10000001000000000000000000000
+			<taxon idref="404|-6.5|2"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="178|-9|1.5"/>
-			10000000000000000000000000000
+			<taxon idref="448|6.5|2"/>
+			100000000100000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="190|-3|-4.5"/>
-			00000000000000000000000000000
+			<taxon idref="474|3.5|-5"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="255|2|-8.5"/>
-			00010000000000000000000000000
+			<taxon idref="525|2.5|-7"/>
+			100000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="265|0|9.5"/>
-			00100000000000000000000000000
+			<taxon idref="531|-4.5|-8"/>
+			000100000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="267|0|10.5"/>
-			00010000000000000000000000000
+			<taxon idref="742|-3.5|11"/>
+			000000000010000100000000
 		</sequence>
 		<sequence>
-			<taxon idref="368|-5|-6.5"/>
-			00001000100000000000000000000
+			<taxon idref="744|7.5|-6"/>
+			110000010000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="410|5|-9.5"/>
-			00100100000000000000000000000
+			<taxon idref="880|-3.5|9"/>
+			100000000100000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="447|7|-4.5"/>
-			10000000000000000000000000000
+			<taxon idref="925|-8.5|7"/>
+			110000010000000010000000
 		</sequence>
 		<sequence>
-			<taxon idref="468|0|13.5"/>
-			10000010010000010000000000000
+			<taxon idref="982|2.5|12"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="495|-12|-4.5"/>
-			10000001000000000000000000000
+			<taxon idref="1053|9.5|6"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="535|-13|6.5"/>
-			00001000100000000000000000000
+			<taxon idref="1054|8.5|5"/>
+			110000100000000000100000
 		</sequence>
 		<sequence>
-			<taxon idref="573|12|-1.5"/>
-			00001000000010000000000000000
+			<taxon idref="1182|-11.5|4"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="596|-12|-7.5"/>
-			00100000001000000000000000000
+			<taxon idref="1185|-12.5|2"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="605|11|10.5"/>
-			00100100000000000000000000000
+			<taxon idref="1200|10.5|-8"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="630|0|-11.5"/>
-			00010000000000000000000000000
+			<taxon idref="1257|-8.5|14"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="633|-3|6.5"/>
-			10000000000000000000000010000
+			<taxon idref="1286|-5.5|13"/>
+			100000001000000000010000
 		</sequence>
 		<sequence>
-			<taxon idref="649|-9|-10.5"/>
-			10000010010100000001000000000
+			<taxon idref="1321|5.5|-11"/>
+			110000100000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="684|9|-10.5"/>
-			00001000000010000000000000000
+			<taxon idref="1359|-12.5|6"/>
+			100000000000010000000000
 		</sequence>
 		<sequence>
-			<taxon idref="699|-3|-11.5"/>
-			00000000000000000000001000000
+			<taxon idref="1364|5.5|11"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="737|-16|-5.5"/>
-			00000000000001000000000000000
+			<taxon idref="1366|-12.5|4"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="760|-15|1.5"/>
-			00001000000010000000000000000
+			<taxon idref="1390|13.5|-1"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="781|-14|-7.5"/>
-			00001000000010000000100000000
+			<taxon idref="1470|-14.5|-8"/>
+			100000000000010000001000
 		</sequence>
 		<sequence>
-			<taxon idref="789|5|15.5"/>
-			10000010010000000000000000010
+			<taxon idref="1475|-13.5|-7"/>
+			100000000000010000001000
 		</sequence>
 		<sequence>
-			<taxon idref="819|-15|2.5"/>
-			00010000000000000100000000000
+			<taxon idref="1515|-7.5|16"/>
+			000000000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="832|14|8.5"/>
-			10000001000000000000000000000
+			<taxon idref="1636|-14.5|-1"/>
+			000000000000000000000100
 		</sequence>
 		<sequence>
-			<taxon idref="872|-15|9.5"/>
-			00010000000000000000000000000
+			<taxon idref="1672|-11.5|-13"/>
+			000000000010000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="880|-9|-11.5"/>
-			00001000000010001000000000000
+			<taxon idref="1775|9.5|-12"/>
+			000000000010000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="884|-16|9.5"/>
-			00100100000000100010000000000
+			<taxon idref="1795|5.5|18"/>
+			000000000000100000000010
 		</sequence>
 		<sequence>
-			<taxon idref="925|-7|-13.5"/>
-			10000010010000000000000000000
+			<taxon idref="1797|7.5|-14"/>
+			100000000000010001000000
 		</sequence>
 		<sequence>
-			<taxon idref="926|-15|-2.5"/>
-			10000010010100000000000000000
+			<taxon idref="1798|6.5|-13"/>
+			000000000000100000000000
 		</sequence>
 		<sequence>
-			<taxon idref="948|14|-6.5"/>
-			10000010010000010000010000000
+			<taxon idref="1829|-11.5|-15"/>
+			000100000000000000000001
 		</sequence>
 		<sequence>
-			<taxon idref="950|-14|-11.5"/>
-			00010000000000000000000001100
+			<taxon idref="1861|-13.5|-12"/>
+			110000100000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="956|14|2.5"/>
-			00100100000000000000000000000
+			<taxon idref="1862|-12.5|-11"/>
+			000100000000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="973|12|13.5"/>
-			00100100000000100000000000000
+			<taxon idref="1865|-5.5|-17"/>
+			000010000001000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="977|-15|-11.5"/>
-			10000010010100000000000000000
+			<taxon idref="1912|-11.5|-14"/>
+			100000000100000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="1020|13|-9.5"/>
-			10000010010000000000000100000
+			<taxon idref="1913|0.5|-19"/>
+			000010000001001000000000
 		</sequence>
 		<sequence>
-			<taxon idref="1024|9|-16.5"/>
-			00010000000000000000000000001
+			<taxon idref="1927|16.5|-3"/>
+			000000000000100000000000
 		</sequence>
 		<sequence>
-			<taxon idref="1031|15|0.5"/>
-			00001000000010001000000000000
+			<taxon idref="1934|-14.5|3"/>
+			100000001000000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="1039|16|3.5"/>
-			00010000000000000100000000000
+			<taxon idref="1995|-15.5|-12"/>
+			000010000001000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="1084|3|-17.5"/>
-			00100100000000100010000000000
+			<taxon idref="1998|-7.5|16"/>
+			000010000001000000000000
 		</sequence>
 		<sequence>
-			<taxon idref="1090|9|-17.5"/>
-			10000010010100000000000000000
+			<taxon idref="2002|16.5|-11"/>
+			000000000000000000000000
 		</sequence>
 	</alignment>
 	
 	
 
 	<!-- The patterns from 1 to end                                              -->
-	<!-- npatterns=29                                                            -->
+	<!-- npatterns=24                                                            -->
 	<patterns id="patterns" from="1" unique="false">
 		<alignment idref="alignment"/>
 	</patterns>
@@ -1235,38 +1235,17 @@
 	</speciationLikelihood>
 	
 
-	<!-- The uncorrelated relaxed clock (Drummond, Ho, Phillips & Rambaut (2006) PLoS Biology 4, e88 )-->
-	<discretizedBranchRates id="branchRates">
-		<treeModel idref="treeModel"/>
-		<distribution>
-			<logNormalDistributionModel meanInRealSpace="true">
-				<mean>
-					<parameter id="ucld.mean" value="1.0"/>
-				</mean>
-				<stdev>
-					<parameter id="ucld.stdev" value="0.3333333333333333" lower="0.0"/>
-				</stdev>
-			</logNormalDistributionModel>
-		</distribution>
-		<rateCategories>
-			<parameter id="branchRates.categories"/>
-		</rateCategories>
-	</discretizedBranchRates>
+	<!-- The strict clock (Uniform rates across branches)                        -->
+	<strictClockBranchRates id="branchRates">
+		<rate>
+			<parameter id="clock.rate" value="1.0"/>
+		</rate>
+	</strictClockBranchRates>
 	
 	<rateStatistic id="meanRate" name="meanRate" mode="mean" internal="true" external="true">
 		<treeModel idref="treeModel"/>
-		<discretizedBranchRates idref="branchRates"/>
+		<strictClockBranchRates idref="branchRates"/>
 	</rateStatistic>
-	
-	<rateStatistic id="coefficientOfVariation" name="coefficientOfVariation" mode="coefficientOfVariation" internal="true" external="true">
-		<treeModel idref="treeModel"/>
-		<discretizedBranchRates idref="branchRates"/>
-	</rateStatistic>
-	
-	<rateCovarianceStatistic id="covariance" name="covariance">
-		<treeModel idref="treeModel"/>
-		<discretizedBranchRates idref="branchRates"/>
-	</rateCovarianceStatistic>
 	
 
 	<!-- The Binary simple model (based on the general substitution model)       -->
@@ -1343,7 +1322,7 @@
 		<patterns idref="patterns"/>
 		<treeModel idref="treeModel"/>
 		<siteModel idref="siteModel"/>
-		<discretizedBranchRates idref="branchRates"/>
+		<strictClockBranchRates idref="branchRates"/>
 	</ancestralTreeLikelihood>
 	
 
@@ -1402,18 +1381,9 @@
 		<deltaExchange delta="0.01" weight="1">
 			<parameter idref="frequencies"/>
 		</deltaExchange>
-		<scaleOperator scaleFactor="0.75" weight="3">
-			<parameter idref="ucld.stdev"/>
-		</scaleOperator>
 		<scaleOperator scaleFactor="0.75" scaleAll="true" ignoreBounds="true" weight="3">
 			<parameter idref="treeModel.allInternalNodeHeights"/>
 		</scaleOperator>
-		<swapOperator size="1" weight="10" autoOptimize="false">
-			<parameter idref="branchRates.categories"/>
-		</swapOperator>
-		<uniformIntegerOperator weight="10">
-			<parameter idref="branchRates.categories"/>
-		</uniformIntegerOperator>
 		<subtreeSlide size="1.0" gaussian="true" weight="30">
 			<treeModel idref="treeModel"/>
 		</subtreeSlide>
@@ -1458,16 +1428,13 @@
 				<dirichletPrior alpha="1.0" sumsTo="1.0">
 					<parameter idref="frequencies"/>
 				</dirichletPrior>
-				<exponentialPrior mean="0.3333333333333333" offset="0.0">
-					<parameter idref="ucld.stdev"/>
-				</exponentialPrior>
 				<logNormalPrior mu="1.0" sigma="1.5" offset="0.0">
 					<parameter idref="yule.birthRate"/>
 				</logNormalPrior>
 				<speciationLikelihood idref="speciation"/>
 				
 				
-				<discretizedBranchRates idref="branchRates"/>
+				<strictClockBranchRates idref="branchRates"/>
 
 				<!-- START Multivariate diffusion model                                      -->
 				<multivariateWishartPrior idref="X_coord.precisionPrior"/>
@@ -1513,11 +1480,8 @@
 			<parameter idref="treeModel.rootHeight"/>
 			<treeLengthStatistic idref="treeLength"/>
 			<parameter idref="yule.birthRate"/>
-			<parameter idref="ucld.mean"/>
-			<parameter idref="ucld.stdev"/>
+			<parameter idref="clock.rate"/>
 			<rateStatistic idref="meanRate"/>
-			<rateStatistic idref="coefficientOfVariation"/>
-			<rateCovarianceStatistic idref="covariance"/>
 
 			<!-- START Multivariate diffusion model                                      -->
 			<matrixParameter idref="X_coord.precision"/>
@@ -1530,7 +1494,7 @@
 			<!-- END Multivariate diffusion model                                        -->
 
 			<ancestralTreeLikelihood idref="treeLikelihood"/>
-			<discretizedBranchRates idref="branchRates"/>
+			<strictClockBranchRates idref="branchRates"/>
 
 			<!-- START Multivariate diffusion model                                      -->
 			<multivariateTraitLikelihood idref="X_coord.traitLikelihood"/>
@@ -1546,7 +1510,7 @@
 		<logTree id="treeFileLog" logEvery="1000" nexusFormat="true" fileName="CC_sim_2.trees" sortTranslationTable="true">
 			<treeModel idref="treeModel"/>
 			<trait name="rate" tag="rate">
-				<discretizedBranchRates idref="branchRates"/>
+				<strictClockBranchRates idref="branchRates"/>
 			</trait>
 			<joint idref="joint"/>
 

@@ -15,7 +15,7 @@ library(gridGraphics)
 setwd("/Users/mayalewinsohn/Documents/PhD/Bedford_lab/hcc-tumor-evol")
 
 
-CC_beast_tree <- read.beast("outputs/CC_sim_2.mcc.tree")
+CC_beast_tree <- read.beast("outputs/CC_mcc.tree")
 
 
 #plot spatial and time phylogenies
@@ -32,7 +32,7 @@ plot_space_and_time_phylos <- function(tree,
   X <- get.data(tree) %>% 
     arrange(node) %>% 
     filter(node %in% 1:n) %>% 
-    select(X_coord, Y_coord) %>% 
+    select(location1, location2) %>% 
     as.matrix
   
   rownames(X) <- tree@phylo$tip.label
@@ -41,7 +41,7 @@ plot_space_and_time_phylos <- function(tree,
   A <- get.data(tree) %>% 
     arrange(node) %>% 
     filter(node %in% (n+1):(n+m)) %>% 
-    select(X_coord, Y_coord) %>% 
+    select(location1, location2) %>% 
     as.matrix
   
   rownames(A) <- as.character((n+1):(n+m))
@@ -63,8 +63,8 @@ plot_space_and_time_phylos <- function(tree,
                    X,
                    A=A,
                    control=list(col.node=col_vec),
-                   xlab = "X_coord",
-                   ylab = "Y_coord",
+                   xlab = "X",
+                   ylab = "Y",
                    label='off')
   dev.off()
   #make combined figure
@@ -82,8 +82,8 @@ plot_space_and_time_phylos <- function(tree,
                    X,
                    A=A,
                    control=list(col.node=col_vec),
-                   xlab = "X_coord",
-                   ylab = "Y_coord",
+                   xlab = "X",
+                   ylab = "Y",
                    label='off')
   
   p1 <- recordPlot()  
@@ -104,11 +104,11 @@ plot_space_and_time_phylos <- function(tree,
 
 
 plot_space_and_time_phylos(CC_beast_tree,
-                           comb_file = "figures/spatial_sim/beast_phylo_spatial_2.png",
-                           time_file =  "figures/spatial_sim/beast_phylo_2.png",
-                           spatial_file ="figures/spatial_sim/beast_spatial_2.png")
+                           comb_file = "figures/spatial_sim/beast_phylo_spatial.png",
+                           time_file =  "figures/spatial_sim/beast_phylo.png",
+                           spatial_file ="figures/spatial_sim/beast_spatial.png")
 
-saveRDS(CC_beast_tree, file = "outputs/objects/CC_beast_tree_2.rds")
+saveRDS(CC_beast_tree, file = "outputs/objects/CC_beast_tree.rds")
 
 
 

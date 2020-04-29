@@ -35,12 +35,12 @@ def adjacent_cell(lattice,i,j): #function to check if adjacent cells are empty
                 free_cells.append([i+h,j+c])
     return free_cells
 
-def cancer_sim(founder_cells = 1,deltat=(1/float(24)),CSC = True,max_cells = 1000,proliferationCSC = 1, proliferationCC = 2, motility = 15, pmax = 10, mortality = 0.1, mutation = 0.1, selection = False,ps = 0.05):
+def cancer_sim(founder_cells = 1,deltat=(1/float(24)),CSC = True,max_cells = 1000,proliferationCSC = 1, proliferationCC = 2, motility = 15, pmax = 10, mortality = 0.1, mutation = 0.1, selection = False,ps = 0.05):    
 
     #create classes
     class Cell:
         def __init__(self):
-
+            
             self.parent_index = 0 #index of cell it was derived from (for df conversion)
             self.parent = None #cell it was derived from
             self.children = [] #set of daughter cells
@@ -61,7 +61,7 @@ def cancer_sim(founder_cells = 1,deltat=(1/float(24)),CSC = True,max_cells = 100
             self.new_mut = False
             self.group = None
             self.alive = True
-
+            
         def as_dict(self):
             return {'index': self.cellnum,
                     'parent_index': self.parent_index,
@@ -83,7 +83,7 @@ def cancer_sim(founder_cells = 1,deltat=(1/float(24)),CSC = True,max_cells = 100
             self.ps = ps #probability of symmetric division
             self.proliferation_rate = proliferationCSC
             self.alive = True
-
+    
     class Group():
         def __init__(self):
             self.alive_cells = []
@@ -105,18 +105,13 @@ def cancer_sim(founder_cells = 1,deltat=(1/float(24)),CSC = True,max_cells = 100
     cur_mutnum = 0
     cur_clonenum = 1
     cur_index = 1
-
     mutation_rate = mutation
     time = 0
-
-
-
-
 
     alive_cells = []
     cells = []
     mutations = []
-
+#     clones = ['a','b','c','d']
 
     i = int(N/2) #to place founder cell in center of lattice
     modi = [0,0,1,1]
@@ -159,9 +154,9 @@ def cancer_sim(founder_cells = 1,deltat=(1/float(24)),CSC = True,max_cells = 100
 
     #time parameters
     dt = deltat # time is equilavent to 1/24 of a day or 1 hour
+#     stop_time =stime#stop simulation after this many days
 
-
-
+    
     #while time < stop_time:
     while len(alive_cells) < max_cells:
         if len(alive_cells) < 1:
@@ -174,7 +169,7 @@ def cancer_sim(founder_cells = 1,deltat=(1/float(24)),CSC = True,max_cells = 100
             r = random.uniform(0, 1)
             pd = cell.proliferation_rate * dt #probability of proliferation in time dt
             free_cells = adjacent_cell(lattice,cell.locx,cell.locy)
-            if r < pd: # Does cell attempt to divide?
+            if r < pd: # Does cell attempt to divide? 
                 r = random.uniform(0,1)
                 pdie = cell.alpha * pd #probability of spontaneously dying
                 if r < pdie:
@@ -184,28 +179,35 @@ def cancer_sim(founder_cells = 1,deltat=(1/float(24)),CSC = True,max_cells = 100
                         cell.pmax -= 1
                         r = random.uniform(0,1)
                         new_cell = copy.deepcopy(cell)
+                        new_cell_2 = copy.deepcopy(cell)
+                        
                         if r <= cell.ps: #does cell divide asymmetrically?
                             new_cell.pmax = pmax
                             new_cell.proliferation_rate = proliferation_rate_CC #average cell divisions per day
                             new_cell.alpha = mortality
                             new_cell.ps = 0
-                        else:
-                            #new_cell = copy.deepcopy(cell)
-                            new_cell.new_mut = False
 
                         new_cell.parent = cell
+                        new_cell_2.parent = cell
                         newloc = random.choice(free_cells)
                         new_cell.locx = newloc[0] #x location in lattice
                         new_cell.locy = newloc[1] #y location in lattice
+                        new_cell_2.locx = cell.locx #x location in lattice
+                        new_cell_2.locy = cell.locy #y location in lattice
                         new_cell.birthdate = time
+                        new_cell_2.birthdate = time
                         new_cell.cellnum = cur_cellnum #unique cell number to identify
+                        cur_cellnum += 1
+                        new_cell_2.cellnum = cur_cellnum
                         new_cell.parent_index = new_cell.parent.cellnum
+                        new_cell_2.parent_index = new_cell_2.parent.cellnum
                         cur_cellnum += 1
                         new_cell.children = []
+                        new_cell_2.children = []
 
 
-                        r = random.uniform(0,1)
-                        if r < cell.mutation_rate: #does cell gain a mutation?
+                        r1 = random.uniform(0,1)
+                        if r1 < cell.mutation_rate: #does cell gain a mutation?
                             #new_mut = Mutation()
                             #new_mut.mutnum = cur_mutnum
                             new_mut = cur_mutnum
@@ -214,29 +216,45 @@ def cancer_sim(founder_cells = 1,deltat=(1/float(24)),CSC = True,max_cells = 100
                             cell.mutations.append(new_mut)
                             new_cell.new_mut = True
                             mutations.append(new_mut)
+                        
+                        r2 = random.uniform(0,1)
+                        if r2 < cell.mutation_rate: #does cell gain a mutation?
+                            #new_mut = Mutation()
+                            #new_mut.mutnum = cur_mutnum
+                            new_mut = cur_mutnum
+                            cur_mutnum +=1
+                            new_cell_2.mutations.append(new_mut)
+                            cell.mutations.append(new_mut)
+                            new_cell_2.new_mut = True
+                            mutations.append(new_mut)
 
 
 
                         cell.children.append(new_cell)
+                        cell.children.append(new_cell_2)
                         alive_cells.append(new_cell)
+                        alive_cells.append(new_cell_2)
                         lattice[new_cell.locx,new_cell.locy] = new_cell
+                        lattice[cell.locx,cell.locy] = new_cell_2
                         cells.append(new_cell)
-
+                        cells.append(new_cell_2)
+                        alive_cells.remove(cell)
+                        cell.alive = False
+                        cell.deathdate = time
                     else:
-                        alive = False
+                        lattice[cell.locx,cell.locy] = None
+                        alive_cells.remove(cell)
+                        cell.alive = False
+                        cell.deathdate = time
 
-            if alive == False:
-                alive_cells.remove(cell)
-                cell.alive = False
-                cell.deathdate = time
-                lattice[cell.locx,cell.locy] = None
+
 
     for cell in alive_cells:
-        #old_node = cell.group.node
+
         cell.deathdate = time
 
-    return cells, alive_cells, lattice
 
+    return cells, alive_cells, lattice
 #run simulation
 
 random.seed(1029)

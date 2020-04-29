@@ -1,0 +1,17 @@
+
+Operator analysis
+Operator                                          Tuning   Count      Time     Time/Op  Pr(accept) 
+frequencies                                       0.155   840676     208716   0.25     0.2403      
+subtreeSlide(treeModel)                           0.008   12602293   18537332 1.47     0.2317      
+Narrow Exchange(treeModel)                                12601690   19546987 1.55     0.4496      
+Wide Exchange(treeModel)                                  2522053    2938570  1.17     0.0102      
+wilsonBalding(treeModel)                                  2522883    5781828  2.29     0.0266      
+scale(treeModel.rootHeight)                       0.137   2519347    5812445  2.31     0.2402      
+uniform(nodeHeights(treeModel))                           25218827   58321825 2.31     0.6704      
+scale(exponential.popSize)                        0.626   2519384    159892   0.06     0.2348      
+exponential.growthRate                            9.702   2520728    158144   0.06     0.2401      
+scale(location.halfDF)                            0.206   840982     7735563  9.2      0.2398      
+swapOperator(location.rrwCategories)                      25211566   52567762 2.09     0.9567      
+uniformInteger(location.rrwCategories)                    8400513    17496948 2.08     0.9699      
+precisionGibbsOperator                                    1679058    3692275  2.2      1.0         
+
